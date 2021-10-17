@@ -179,16 +179,6 @@
     color: $bandsite-silver;
   }
 
-  .mobile__images {
-    max-width: 100%;
-    padding: $mobile__heading--padding;
-    @include img__quality;
-  }
-
-  .photo__gallery {
-    width: 100%;
-  }
-
   // ! .. Media Queries .. ! //
   @include medium {
     .about__image {
@@ -200,12 +190,74 @@
       justify-content: center;
       @include img__quality;
     }
+    .about__quote {
+      font-size: 1.4rem;
+      line-height: 2.2rem;
+      max-width: 75vw;
+      margin: 0 auto;
+    }
+    .about__title {
+      padding-left: 8rem;
+    }
     .about__info__box {
       display: flex;
       flex-direction: row;
       width: 100vw;
+      justify-content: space-between;
+      padding: 0 5rem 2.4rem 5rem;
+    }
+    .about__info1,
+    .about__info2 {
+      padding: 0 3rem;
+      font-size: 1.4rem;
+      line-height: 2.2rem;
     }
   }
+}
+
+// ! Gallery Section Below ! //
+
+.photo__gallery {
+  width: 100%;
+  background-color: $bansite-offwhite;
+
+  .gallery__title {
+    padding: $mobile__heading--padding;
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+    font-weight: 700;
+    color: $bandsite-black;
+  }
+
+  // ! .. Media Queries .. ! //
+
+  @include medium {
+    width: 100vw;
+    display: flex;
+    height: 60rem;
+    flex-wrap: wrap;
+    padding: 0 0 0.8rem 0;
+    justify-content: center;
+    margin: 0 auto;
+
+    .gallery__title {
+      width: 100%;
+      font-size: 3.6rem;
+      padding-top: 5rem;
+    }
+
+    .mobile__images {
+      max-width: 250px;
+      max-height: 150px;
+
+      padding: 0 0.8rem 0 0.8rem;
+    }
+  }
+}
+.mobile__images {
+  max-width: 100%;
+  padding: $mobile__heading--padding;
+  @include img__quality;
 }
 // ! Footer Section Below ! //
 
@@ -216,38 +268,74 @@
   font-size: 1.3rem;
   line-height: 1.8rem;
   font-weight: 400;
-}
 
-.footer__icons {
-  padding-right: 2rem;
-}
+  .footer__icon {
+    padding-right: 2rem;
+  }
 
-.footer__title {
-  font-size: 2.4rem;
-  line-height: 3.2rem;
-  padding: 2.4rem 0 1.6rem 0;
-}
-.social__contact {
-  font-size: 1.3rem;
-  line-height: 1.8rem;
-  font-weight: 400;
-  padding: 1.6rem 0 0 0;
-}
-.social__standout {
-  font-size: 1.3rem;
-  line-height: 1.8rem;
-  font-weight: 700;
-  padding: 1.6rem 0 0 0;
-}
+  .footer__title {
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+    padding: 2.4rem 0 1.6rem 0;
+  }
+  .social__contact {
+    font-size: 1.3rem;
+    line-height: 1.8rem;
+    font-weight: 400;
+    padding: 1.6rem 0 0 0;
+  }
+  .social__standout {
+    font-size: 1.3rem;
+    line-height: 1.8rem;
+    font-weight: 700;
+    padding: 1.6rem 0 0 0;
+  }
 
-.social__copyright {
-  padding: 1.6rem 0 1.6rem 0;
-}
+  .social__copyright {
+    padding: 1.6rem 0 1.6rem 0;
+  }
 
-.footer__logo {
-  min-width: 12rem;
-  min-height: 2rem;
-  padding-top: 1.6rem;
-}
+  .footer__logo {
+    min-width: 12rem;
+    min-height: 2rem;
+    padding-top: 1.6rem;
+  }
 
-// ! .. Media Queries Below .. ! //
+  .footer__text {
+    font-size: 1.3rem;
+    line-height: 1.8rem;
+    font-weight: 400;
+  }
+
+  // ! .. Media Queries .. ! //
+
+  @include medium {
+    display: flex;
+    width: 100vw;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    .social__contact__section {
+      display: flex;
+      width: fit-content;
+      height: 30rem;
+      flex-wrap: wrap;
+    }
+    .social__contacts {
+      @include social__contact__tabplus;
+      width: 20vw;
+    }
+
+    .footer__title {
+      font-size: 3.6rem;
+    }
+    .footer__text {
+      @include footer__tab__text;
+    }
+    .nav__brand__img {
+      position: relative;
+      left: 65rem;
+      bottom: 27rem;
+    }
+  }
+}

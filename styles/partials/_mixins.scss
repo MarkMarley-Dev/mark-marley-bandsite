@@ -5,3 +5,21 @@
   image-rendering: crisp-edges;
   image-rendering: pixelated;
 }
+
+@mixin social__contact__tabplus {
+  width: 20rem;
+  height: 8rem;
+  padding: 1.6rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@mixin footer__text {
+  font-size: 1.4rem;
+  line-height: 2rem;
+  font-weight: 400;
+}
+@mixin footer__tab__text {
+  font-size: 1.6rem;
+  line-height: 2rem;
+}

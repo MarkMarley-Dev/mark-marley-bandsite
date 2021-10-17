@@ -128,7 +128,7 @@
     line-height: 4.4rem;
   }
 }
-
+// ! .. About Section .. ! //
 .about {
   max-width: 100vw;
   display: flex;
@@ -137,11 +137,10 @@
   line-height: 3.2rem;
 
   .about__image {
-    // background-image: url("../assets/Images/band.jpg");
+    display: flex;
     max-width: 100%;
-    min-height: 20rem;
-    background-size: cover;
-    background-position: center;
+
+    @include img__quality;
   }
 
   .about__title {
@@ -249,7 +248,7 @@
     .mobile__images {
       max-width: 250px;
       max-height: 150px;
-
+      @include img__quality;
       padding: 0 0.8rem 0 0.8rem;
     }
   }

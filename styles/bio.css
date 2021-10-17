@@ -121,10 +121,13 @@
   line-height: 3.2rem;
 }
 .about .about__image {
+  display: flex;
   max-width: 100%;
-  min-height: 20rem;
-  background-size: cover;
-  background-position: center;
+  image-rendering: auto;
+  image-rendering: crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor;
+      image-rendering: -moz-crisp-edges;
+      image-rendering: pixelated;
 }
 .about .about__title {
   padding-top: 2.4rem;
@@ -223,6 +226,11 @@
   .photo__gallery .mobile__images {
     max-width: 250px;
     max-height: 150px;
+    image-rendering: auto;
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor;
+        image-rendering: -moz-crisp-edges;
+        image-rendering: pixelated;
     padding: 0 0.8rem 0 0.8rem;
   }
 }

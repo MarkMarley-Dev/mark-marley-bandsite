@@ -272,6 +272,9 @@
   .footer__icon {
     padding-right: 2rem;
   }
+  .nav__logo__tabplus {
+    display: none;
+  }
 
   .footer__title {
     font-size: 2.4rem;
@@ -317,25 +320,60 @@
 
     .social__contact__section {
       display: flex;
-      width: fit-content;
-      height: 30rem;
+      width: 100vw;
+      justify-content: space-evenly;
+      height: 15rem;
       flex-wrap: wrap;
     }
-    .social__contacts {
-      @include social__contact__tabplus;
-      width: 20vw;
+    .footer__bandsite {
+      display: flex;
+      width: 50vw;
+      justify-content: flex-end;
+      align-self: center;
+    }
+    .nav__logo__tabplus {
+      display: flex;
+      height: 2rem;
+      width: 12rem;
+    }
+
+    .social__contact {
+      min-width: 30%;
     }
 
     .footer__title {
       font-size: 3.6rem;
+      padding-left: 4rem;
+
+      display: flex;
+      justify-content: flex-start;
     }
     .footer__text {
       @include footer__tab__text;
     }
     .nav__brand__img {
-      position: relative;
-      left: 65rem;
-      bottom: 27rem;
+      padding-left: 10rem;
+      display: none;
+    }
+
+    .footer__icons {
+      display: inline-flex;
+      padding: 1rem 0 0 2rem;
+    }
+    .footer__top {
+      display: flex;
+      flex-direction: row;
+      min-width: 100vw;
+      justify-content: flex-start;
+    }
+    .footer_bottom {
+      display: flex;
+      flex-direction: row-reverse;
+    }
+    .social__copyright {
+      min-width: 58rem;
+      padding-left: 21.8rem;
+      justify-content: flex-start;
     }
   }
 }

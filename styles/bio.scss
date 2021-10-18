@@ -149,6 +149,7 @@
     font-size: 2.4rem;
     line-height: 3.2rem;
     font-weight: 700;
+    color: $bandsite-black;
   }
   // style guide is showing a higher font weight but doesn't lok right
 
@@ -197,6 +198,15 @@
     }
     .about__title {
       padding-left: 8rem;
+      font-size: 3.6rem;
+      line-height: 4.4rem;
+      font-weight: 700;
+    }
+    .about__subtitle {
+      padding-left: 8rem;
+      font-size: 2.4rem;
+      line-height: 3.2rem;
+      font-weight: 600;
     }
     .about__info__box {
       display: flex;
@@ -210,6 +220,24 @@
       padding: 0 3rem;
       font-size: 1.4rem;
       line-height: 2.2rem;
+    }
+  }
+  @include large {
+    .about__image {
+      min-height: 33rem;
+      max-width: 73vw;
+    }
+    .about__title {
+      padding-left: 6rem;
+    }
+    .about__info__box {
+      padding: 0 9rem;
+    }
+    .about__subtitle {
+      padding-left: 11.5rem;
+      font-size: 2.4rem;
+      line-height: 3.2rem;
+      font-weight: 600;
     }
   }
 }
@@ -226,6 +254,10 @@
     line-height: 3.2rem;
     font-weight: 700;
     color: $bandsite-black;
+  }
+  .mobile__images {
+    max-width: 100%;
+    padding: $mobile__heading--padding;
   }
 
   // ! .. Media Queries .. ! //
@@ -251,12 +283,17 @@
       @include img__quality;
       padding: 0 0.8rem 0 0.8rem;
     }
+
+    // gallery looks good at large images are accurate
+    @include large {
+      .gallery__title {
+        padding-left: 12.5rem;
+      }
+      .mobile__images {
+        max-width: 275px;
+      }
+    }
   }
-}
-.mobile__images {
-  max-width: 100%;
-  padding: $mobile__heading--padding;
-  @include img__quality;
 }
 // ! Footer Section Below ! //
 
@@ -373,6 +410,24 @@
       min-width: 58rem;
       padding-left: 21.8rem;
       justify-content: flex-start;
+    }
+  }
+  @include large {
+    .social__contact__section {
+      justify-content: flex-start;
+      height: 20rem;
+    }
+    .social__contacts {
+      padding: 2rem 2rem 0 5rem;
+    }
+    .social__copyright {
+      padding: 0 0 2rem 17rem;
+    }
+    .footer__title {
+      padding-right: 2rem;
+    }
+    .footer__bandsite {
+      width: 57vw;
     }
   }
 }

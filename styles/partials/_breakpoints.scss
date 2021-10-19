@@ -1,7 +1,15 @@
 // ? Variable screen sizes //
+$small: 550px;
 $medium: 768px;
 $large: 1024px;
 $huge: 1280px;
+
+// ? screen size small - mobile - tablet bridge //
+@mixin small {
+  @media only screen and (min-width: $small) {
+    @content;
+  }
+}
 
 // ? screen size medium - Tablet //
 @mixin medium {

@@ -3,6 +3,7 @@
 @import "./partials/mixins";
 @import "./partials/typography";
 @import "./partials/header";
+@import "./partials/footer";
 
 *,
 *:after,
@@ -71,6 +72,7 @@
   }
 
   // ! .. Media Queries .. ! //
+
   @include medium {
     .about__image {
       display: flex;
@@ -136,6 +138,8 @@
 // ! Gallery Section Below ! //
 
 .photo__gallery {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   background-color: $bansite-offwhite;
 
@@ -152,43 +156,68 @@
   }
 
   // ! .. Media Queries .. ! //
-
-  @include medium {
-    width: 100vw;
-    display: flex;
-    height: 60rem;
-    flex-wrap: wrap;
-    padding: 0 0 0.8rem 0;
-    justify-content: center;
-    margin: 0 auto;
-
-    .gallery__title {
-      width: 100%;
-      font-size: 3.6rem;
-      padding-top: 5rem;
-    }
-
+  @include small {
     .mobile__images {
-      max-width: 260px;
-      max-height: 150px;
-      @include img__quality;
-      padding: 0 0.8rem 0 0.8rem;
+      max-width: 75%;
+      margin: 0 auto;
     }
 
-    // gallery looks good at large images are accurate
-    @include large {
+    @include medium {
+      width: 100vw;
+      display: flex;
+      flex-direction: row;
+      height: 60rem;
+      flex-wrap: wrap;
+      padding: 0 0 0.8rem 0;
+      justify-content: center;
+      margin: 0 auto;
+
       .gallery__title {
-        padding-left: 12.5rem;
+        width: 100%;
+        font-size: 3.6rem;
+        padding-top: 5rem;
       }
+
       .mobile__images {
-        max-width: 275px;
+        max-width: 260px;
+        max-height: 150px;
+        @include img__quality;
+        padding: 0 0.8rem 0 0.8rem;
+      }
+
+      // gallery looks good at large images are accurate
+      @include large {
+        .gallery__title {
+          padding-left: 12.5rem;
+        }
+        .mobile__images {
+          max-width: 275px;
+        }
       }
     }
   }
 }
-// ! Footer Section Below ! //
+
+// ! .. Comments Section .. ! //
+
+.commments {
+  display: flex;
+  flex-direction: column;
+}
+.comments__title {
+  padding-top: 2.4rem;
+  padding-bottom: 1.6rem;
+  padding: 2.4rem 0 1.6rem 1.6rem;
+  font-size: 2.4rem;
+  line-height: 3.2rem;
+  font-weight: 700;
+  color: $bandsite-black;
+}
+
+// ! .. Footer Section Below .. ! //
 
 .footer {
+  width: 100%;
   background-color: $bandsite-black;
   color: $bandsite-white;
   padding: $mobile__heading--padding;

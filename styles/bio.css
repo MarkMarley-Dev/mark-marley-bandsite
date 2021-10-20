@@ -427,6 +427,7 @@
 .commments {
   display: flex;
   flex-direction: column;
+  padding: 1.6rem;
 }
 
 .comments__title {
@@ -437,6 +438,97 @@
   line-height: 3.2rem;
   font-weight: 700;
   color: #323232;
+}
+
+.comments__form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  border-bottom: 1px solid #e1e1e1;
+  min-height: 20rem;
+}
+
+.comments__img {
+  display: flex;
+  flex-direction: row;
+  border-radius: 50%;
+  min-height: 3.6rem;
+  min-width: 3.6rem;
+  max-height: 3.6rem;
+  max-width: 3.6rem;
+  background-size: cover;
+  background-position: center;
+  background-image: url("../assets/Images/Mohan-muruge.jpg");
+  align-self: flex-start;
+  justify-content: center;
+}
+
+.comments__sub-title {
+  color: #afafaf;
+  display: flex;
+  justify-self: flex-start;
+}
+
+.comment__text-area {
+  display: flex;
+  border: 1px solid #e1e1e1;
+  border-radius: 0.4rem;
+  background-color: #fafafa;
+  max-width: 60vw;
+  padding: 1.2rem;
+  max-width: 70%;
+  height: 3.6rem;
+}
+
+.comments__default {
+  border-bottom: 1px solid #e1e1e1;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.comments__default__img {
+  display: flex;
+  flex-wrap: wrap;
+  justify-self: flex-start;
+  border-radius: 50%;
+  min-height: 3.6rem;
+  min-width: 3.6rem;
+  max-height: 3.6rem;
+  max-width: 3.6rem;
+  background-size: cover;
+  background-position: center;
+  margin-top: 3rem;
+  background-color: #e1e1e1;
+}
+
+.comments__default__names {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 1.2rem;
+  color: #323232;
+  font-weight: 700;
+  line-height: 3.2rem;
+  padding-left: 1rem;
+  padding-top: 2.5rem;
+}
+
+.comments__default__dates {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  align-content: center;
+  margin-left: auto;
+  color: #e1e1e1;
+  padding-top: 1rem;
+  padding-left: 8rem;
+}
+
+.comments__default__info {
+  padding-left: 5rem;
+  color: #323232;
+  font-size: 1.2rem;
+  padding-bottom: 2.4rem;
+  padding-top: -2rem;
 }
 
 .footer {

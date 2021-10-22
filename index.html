@@ -132,12 +132,17 @@
 Enter your name 
   </textarea>
   <label for="comments">Comment</label>
-<textarea class="comment__text-area" name="comments" rows="4" cols="50">
+<textarea class="comment__text-area" id="comment__text" name="comments" rows="4" cols="50">
 Add a new comment..
   </textarea>
   
-  <input class="comment__btn" type="submit" value="Comment">
+  <input class="comment__btn" id="submit" type="submit" value="Comment">
 </form>
+<article class="comments__default">
+  <div class="comments__default__img"> </div>
+<p class="Comments__append__name"></p><p class="Comments__append__date"></p>
+<p id="comments__append__info"></p>
+</article>
 
 <article class="comments__default">
   <div class="comments__default__img"> </div>
@@ -160,6 +165,17 @@ If there was one day of my life I could relive, this would be it. What an incred
   get enough.</p>
 
 </article>
+
+   <div class="info">
+      <label for="example">Enter Text
+      </label>
+      <input id="example" type="text"
+             name="Ntext" size="20">
+      <input id="sent" type="submit"  
+             value="Send"> 
+  </div>
+    <p id="para">      
+    </p>
 </section>
       <!--  ! .. footer Below .. !  -->
 
@@ -259,5 +275,6 @@ If there was one day of my life I could relive, this would be it. What an incred
       </div>
      </div>
     </footer>
+    <script src="./scripts/index-page.js"></script>
   </body>
 </html>

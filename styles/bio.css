@@ -252,6 +252,17 @@
   font-size: 10px;
   font-family: AvenirNextLTPro;
 }
+* ::-moz-placeholder, *:after ::-moz-placeholder, *:before ::-moz-placeholder {
+  overflow: visible;
+}
+* :-ms-input-placeholder, *:after :-ms-input-placeholder, *:before :-ms-input-placeholder {
+  overflow: visible;
+}
+* ::placeholder,
+*:after ::placeholder,
+*:before ::placeholder {
+  overflow: visible;
+}
 
 .about {
   max-width: 100vw;
@@ -367,11 +378,15 @@
 
 .photo__gallery {
   display: flex;
-  flex-direction: column;
+  margin: 0 auto;
+  flex-wrap: wrap;
   width: 100%;
+  padding: 1.6rem;
   background-color: #fafafa;
 }
 .photo__gallery .gallery__title {
+  display: block;
+  width: 100%;
   padding: 1.6rem 1.6rem 0 1.6rem;
   font-size: 2.4rem;
   line-height: 3.2rem;
@@ -379,12 +394,11 @@
   color: #323232;
 }
 .photo__gallery .mobile__images {
-  max-width: 100%;
+  max-width: 38rem;
   padding: 1.6rem 1.6rem 0 1.6rem;
 }
 @media only screen and (min-width: 550px) {
   .photo__gallery .mobile__images {
-    max-width: 75%;
     margin: 0 auto;
   }
 }
@@ -424,13 +438,17 @@
   }
 }
 
-.commments {
+.form__wrapper {
   display: flex;
-  flex-direction: column;
-  padding: 1.6rem;
+  justify-content: flex-end;
+}
+
+.create__form {
+  display: flex;
 }
 
 .comments__title {
+  align-self: flex-start;
   padding-top: 2.4rem;
   padding-bottom: 1.6rem;
   padding: 2.4rem 0 1.6rem 1.6rem;
@@ -441,43 +459,76 @@
 }
 
 .comments__form {
+  width: 100%;
+  min-height: 25rem;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  padding-bottom: 1.6rem;
+  padding-right: 1.6rem;
   border-bottom: 1px solid #e1e1e1;
-  min-height: 20rem;
+  line-height: 2.4rem;
+}
+
+ul,
+li {
+  list-style-type: none;
+  padding: 0;
 }
 
 .comments__img {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   border-radius: 50%;
   min-height: 3.6rem;
   min-width: 3.6rem;
   max-height: 3.6rem;
   max-width: 3.6rem;
+  margin-left: 2rem;
   background-size: cover;
   background-position: center;
   background-image: url("../assets/Images/Mohan-muruge.jpg");
   align-self: flex-start;
-  justify-content: center;
+  margin: 2rem 2rem 0 0;
 }
 
 .comments__sub-title {
   color: #afafaf;
   display: flex;
   justify-self: flex-start;
+  font-size: 1.4rem;
+  font-weight: 500;
 }
 
 .comment__text-area {
   display: flex;
+  flex-direction: column;
   border: 1px solid #e1e1e1;
   border-radius: 0.4rem;
   background-color: #fafafa;
-  max-width: 60vw;
+  min-width: 80vw;
+  max-height: 8rem;
   padding: 1.2rem;
   max-width: 70%;
+  font-size: 1.4rem;
+}
+.comment__text-area:active {
+  border: #323232 1px solid;
+}
+
+.comment__text-area__name {
+  display: flex;
+  border: 1px solid #e1e1e1;
+  border-radius: 0.4rem;
+  background-color: #fafafa;
+  min-width: 80vw;
+  padding: 1rem;
+  max-width: 70%;
   height: 3.6rem;
+  font-size: 1.4rem;
+}
+.comment__text-area__name:active {
+  border: #323232 1px solid;
 }
 
 .comments__default {
@@ -529,6 +580,37 @@
   font-size: 1.2rem;
   padding-bottom: 2.4rem;
   padding-top: -2rem;
+}
+
+.comment__btn {
+  min-width: 80vw;
+  min-height: 4rem;
+  margin-top: 1.6rem;
+  background-color: #323232;
+  color: #ffffff;
+  font-size: 2rem;
+  border-radius: 0.4rem;
+}
+
+.div {
+  display: flex;
+  flex-direction: column;
+}
+
+.comments__list {
+  width: 80%;
+  min-height: 25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-bottom: 1.6rem;
+  padding-right: 1.6rem;
+  border-bottom: 1px solid #e1e1e1;
+  line-height: 2.4rem;
+}
+
+.divImg {
+  display: flex;
 }
 
 .footer {

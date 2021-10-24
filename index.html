@@ -120,63 +120,59 @@
   </section>
 
 <!--  ! ..    Comments Section .. ! -->
+ 
 
-<section class="commments">
-  <h2 class="comments__title">  Join The Conversation </h2>
-  
-  <form class="comments__form"action="#">
-    
-<label class="comments__sub-title" for="comments">Name</label>
-<div class="comments__img"></div>
-<textarea name="Name" class="comment__text-area"  rows="4" cols="50">
-Enter your name 
-  </textarea>
-  <label for="comments">Comment</label>
-<textarea class="comment__text-area" id="comment__text" name="comments" rows="4" cols="50">
-Add a new comment..
-  </textarea>
-  
-  <input class="comment__btn" id="submit" type="submit" value="Comment">
-</form>
-<article class="comments__default">
-  <div class="comments__default__img"> </div>
-<p class="Comments__append__name"></p><p class="Comments__append__date"></p>
-<p id="comments__append__info"></p>
-</article>
+      <section class="form__wrapper">
+        
+        <div class="create comments__form" id="create">
+        <h2 class="comments__title"> Join the Conversation</h2>
+         
+        <form action="" class="create__form">
+         <div class="comments__img"></div>
+         <div>
+              <ul>
+                
+            <li class="create__form--control " >
+             
+              <label for="commentName" class="comments__sub-title"
+            >Name</label>
+            
+            <input
+              type="text"
+              name="commentName"
+              id="commentName"
+              placeholder="Enter your name"
+              class="comment__text-area__name"
+            >
+            </li>
+          <li>
+            <label class="comments__sub-title" for="commentName">Comment</label>
+            <textarea
+              name="commentInfo"
+              id="commentInfo"
+              cols="30"
+              rows="10"
+              placeholder="Add new comment here"
+              class="comment__text-area "
+            ></textarea>
+          <!-- </div> -->
+          </li>
+          <button type="submit" class="comment__btn">Comment</button>
+         
+          </ul>
+           </div>
+        </form>
+      </section>
+ <hr />
+      <section id="comments">
+        <div>
+         <div class=""> </div>
+          
+        <article id="comments__list" class="comments__list"></article>
+        </div>     
+      </section>
 
-<article class="comments__default">
-  <div class="comments__default__img"> </div>
-<p class="comments__default__names">Conor Walton</p><p class="comments__default__dates">02/17/2021</p>
-<p class="comments__default__info">This is art. This is inexplicable magic expressed in the purest way, everything 
-  that makes up this majestic work deserves reverence. Let us appreciate this for what 
-  it is and what it contains.</p>
-</article>
-<article class="comments__default">
-  <div class="comments__default__img"> </div>
-<p class="comments__default__names">Emilie Beach</p><p class="comments__default__dates"> 01/19/2021</p>
-<p class="comments__default__info">I feel blessed to have seen them in person. What a show! They were just perfection. 
-If there was one day of my life I could relive, this would be it. What an incredible day.</p>
-</article>
-<article class="comments__default">
-  <div class="comments__default__img"> </div>
-<p class="comments__default__names">Miles Acosta</p><p class="comments__default__dates"> 12/20/2020</p>
-<p class="comments__default__info">I can't stop listening. Every time I hear one of their songs - the vocals - it gives me 
-  goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't 
-  get enough.</p>
-
-</article>
-
-   <div class="info">
-      <label for="example">Enter Text
-      </label>
-      <input id="example" type="text"
-             name="Ntext" size="20">
-      <input id="sent" type="submit"  
-             value="Send"> 
-  </div>
-    <p id="para">      
-    </p>
-</section>
+     
       <!--  ! .. footer Below .. !  -->
 
     <footer class="footer"> 

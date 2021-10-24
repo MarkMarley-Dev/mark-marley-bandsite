@@ -22,39 +22,44 @@ const data = [
   },
 ];
 
-let comments = data.splice(0);
+let comments = data;
 
 const shoppingCart = [];
-
+// higer order function for each going over comments for each
 comments.map((comments) => comments.value);
 
 // ! Comments List
 let commentsList = document.getElementById("comments__list");
-let imageId = document.getElementById("comment__imageId");
-console.log(imageId);
-let nameId = document.getElementById("comment__nameId");
-let dateId = document.getElementById("comment__dateId");
-let commentInfoID = document.getElementById("comment__infoId");
+// let imageId = document.getElementById("comment__imageId");
+// console.log(imageId);
+// let nameId = document.getElementById("comment__nameId");
+// let dateId = document.getElementById("comment__dateId");
+// let commentInfoID = document.getElementById("comment__infoId");
 
 function createComment(comment) {
-  if (commentsList) {
+  if (true) {
     const div = document.createElement("div");
-    div.classList.add("comments__section");
+    div.classList.add("comment");
 
-    const divImg = document.createElement("divImg");
+    const divImg = document.createElement("div");
     divImg.classList.add("divImg");
 
+    const headerContainer = document.createElement("div");
+    headerContainer.classList.add("headerContainer");
+
+    const commentInfoContainer = document.createElement("div");
+    commentInfoContainer.classList.add("commentInfoContainer");
+
     const commentImage = document.createElement("img");
-    commentImage.setAttribute("src", "comments.commentImage");
-    // commentImage.classList.add("comments__default__img");
+    commentImage.setAttribute("src", comment.commentImage);
+    commentImage.classList.add("comments__default__img");
 
     const commentName = document.createElement("h2");
     commentName.innerText = comment.commentName;
-    commentName.classList.add("comments__default__names");
 
     const commentDate = document.createElement("p");
     commentDate.innerText = comment.commentDate;
-    // commentDate.classList.add("comments__default__dates");
+    // commentDate.classList.add("comments__default__dacommentDatetes");
 
     const commentInfo = document.createElement("p");
     commentInfo.innerText = comment.commentInfo;
@@ -64,6 +69,17 @@ function createComment(comment) {
     // // div.appendChild(commentImage);
     // commentsList.append(div);
     // commentsImgDefault.append(divImg);
+    // divImg.append(commentImage);
+    // imageId.append(divImg);
+    const commentsSection = document.querySelector(".comments__section");
+    commentsSection.appendChild(div);
+    div.appendChild(divImg);
+    divImg.appendChild(commentImage);
+    div.appendChild(commentInfoContainer);
+    commentInfoContainer.appendChild(headerContainer);
+    headerContainer.appendChild(commentName);
+    headerContainer.appendChild(commentDate);
+    commentInfoContainer.appendChild(commentInfo);
   }
 }
 

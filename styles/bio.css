@@ -84,35 +84,6 @@
   font-weight: 700;
 }
 
-.hero {
-  display: flex;
-  background-color: #323232;
-  opacity: 0.5;
-  max-width: 100%;
-  min-height: 20rem;
-  background-size: cover;
-  background-position: center;
-  background-image: url("../assets/Images/hero-bio.jpg");
-}
-.hero .hero__title {
-  font-size: 2.4rem;
-  line-height: 3.2rem;
-  font-weight: 700;
-  padding-left: 1.6rem;
-  color: #ffffff;
-  align-self: center;
-}
-@media only screen and (min-width: 768px) {
-  .hero {
-    min-height: 30rem;
-    min-width: 100%;
-  }
-}
-.hero .hero__title {
-  font-size: 3.6rem;
-  line-height: 4.4rem;
-}
-
 .footer {
   background-color: #323232;
   color: #ffffff;
@@ -262,6 +233,35 @@
 *:after ::placeholder,
 *:before ::placeholder {
   overflow: visible;
+}
+
+.hero {
+  display: flex;
+  background-color: #323232;
+  opacity: 0.5;
+  max-width: 100%;
+  min-height: 20rem;
+  background-size: cover;
+  background-position: center;
+  background-image: url("../assets/Images/hero-bio.jpg");
+}
+.hero .hero__title {
+  font-size: 2.4rem;
+  line-height: 3.2rem;
+  font-weight: 700;
+  padding-left: 1.6rem;
+  color: #ffffff;
+  align-self: center;
+}
+@media only screen and (min-width: 768px) {
+  .hero {
+    min-height: 30rem;
+    min-width: 100%;
+  }
+}
+.hero .hero__title {
+  font-size: 3.6rem;
+  line-height: 4.4rem;
 }
 
 .about {
@@ -555,6 +555,8 @@ li {
 }
 
 .comments__default__names {
+  display: flex;
+  flex-direction: column;
   font-size: 1.4rem;
   font-weight: 500;
   color: #323232;
@@ -593,11 +595,21 @@ li {
 
 .comments__section {
   display: flex;
-  flex-direction: row;
+  min-width: 80%;
+  max-width: 80%;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+#comment__imageId {
+  display: flex;
+  flex-direction: column;
+  max-width: 20%;
+  min-width: 20%;
+  flex-wrap: wrap;
 }
 
 .comments__list {
-  width: 80%;
   min-height: 25rem;
   display: flex;
   flex-direction: column;
@@ -609,7 +621,32 @@ li {
   line-height: 2.4rem;
 }
 
-.divImg {
+.comment__information,
+.comment__test {
+  display: flex;
+  flex-direction: column;
+}
+.comment__information p,
+.comment__test p {
+  display: flex;
+  flex-direction: column;
+}
+
+#comment__infoId {
+  display: flex;
+  flex-direction: column;
+}
+
+#comments {
+  display: flex;
+  width: 100%;
+}
+
+.comment {
+  display: flex;
+}
+
+.headerContainer {
   display: flex;
 }
 

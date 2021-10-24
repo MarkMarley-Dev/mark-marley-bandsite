@@ -316,6 +316,7 @@ li {
   background-size: cover;
   background-position: center;
   margin-top: 3rem;
+  width: fit-content;
   background-color: $bandsite-mercury;
 }
 .comments__default__names {
@@ -355,6 +356,7 @@ li {
 
 .comments__section {
   display: flex;
+  flex-direction: row;
 }
 
 .comments__list {

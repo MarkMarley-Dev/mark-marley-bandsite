@@ -548,6 +548,9 @@ li {
   background-size: cover;
   background-position: center;
   margin-top: 3rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   background-color: #e1e1e1;
 }
 
@@ -590,6 +593,7 @@ li {
 
 .comments__section {
   display: flex;
+  flex-direction: row;
 }
 
 .comments__list {

@@ -1,20 +1,20 @@
 const data = [
   {
-    commentImage: "",
+    commentImage: "../assets/Images/Mohan-muruge.jpg",
     commentName: "Conor Walton ",
     commentDate: "02/17/2021",
     commentInfo:
       "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
   },
   {
-    commentImage: "",
+    commentImage: "../assets/Images/Mohan-muruge.jpg",
     commentName: "Emilie Beach",
     commentDate: "01/09/2021",
     commentInfo:
       "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
   },
   {
-    commentImage: "",
+    commentImage: "../assets/Images/Mohan-muruge.jpg",
     commentName: "Miles Acosta",
     commentDate: "12/20/2020",
     commentInfo:
@@ -22,7 +22,7 @@ const data = [
   },
 ];
 
-let comments = data.splice(-3);
+let comments = data.splice(0);
 
 const shoppingCart = [];
 
@@ -30,18 +30,23 @@ comments.map((comments) => comments.value);
 
 // ! Comments List
 let commentsList = document.getElementById("comments__list");
+let imageId = document.getElementById("comment__imageId");
+console.log(imageId);
+let nameId = document.getElementById("comment__nameId");
+let dateId = document.getElementById("comment__dateId");
+let commentInfoID = document.getElementById("comment__infoId");
 
 function createComment(comment) {
   if (commentsList) {
     const div = document.createElement("div");
-    div.classList.add("comments__form");
+    div.classList.add("comments__section");
 
     const divImg = document.createElement("divImg");
     divImg.classList.add("divImg");
 
     const commentImage = document.createElement("img");
-    // commentImage.setAttribute("src", "comment.commentImage");
-    commentImage.classList.add("comments__default__img");
+    commentImage.setAttribute("src", "comments.commentImage");
+    // commentImage.classList.add("comments__default__img");
 
     const commentName = document.createElement("h2");
     commentName.innerText = comment.commentName;
@@ -54,16 +59,11 @@ function createComment(comment) {
     const commentInfo = document.createElement("p");
     commentInfo.innerText = comment.commentInfo;
 
-    div.addEventListener("click", () =>
-      console.log(`You have selected: ${comment.commentName}`)
-    );
-
-    divImg.append(commentImage);
-    div.appendChild(commentName);
-    div.appendChild(commentDate);
-    div.appendChild(commentInfo);
-    // div.appendChild(commentImage);
-    commentsList.append(div, divImg);
+    // divImg.appendChild(commentImage);
+    // div.append(commentName, commentDate, commentInfo);
+    // // div.appendChild(commentImage);
+    // commentsList.append(div);
+    // commentsImgDefault.append(divImg);
   }
 }
 
@@ -86,7 +86,6 @@ formEl.addEventListener("submit", (e) => {
   const newComment = {
     commentName,
     commentInfo,
-    commentDate,
   };
 
   comments.unshift(newComment);

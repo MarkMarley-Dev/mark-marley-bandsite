@@ -29,7 +29,7 @@ const shoppingCart = [];
 comments.map((comments) => comments.value);
 
 // ! Comments List
-let commentsList = document.getElementById("comments__list");
+const commentsSection = document.querySelector(".comments__section");
 // let imageId = document.getElementById("comment__imageId");
 // console.log(imageId);
 // let nameId = document.getElementById("comment__nameId");
@@ -37,7 +37,7 @@ let commentsList = document.getElementById("comments__list");
 // let commentInfoID = document.getElementById("comment__infoId");
 
 function createComment(comment) {
-  if (true) {
+  if (commentsSection) {
     const div = document.createElement("div");
     div.classList.add("comment");
 
@@ -56,13 +56,15 @@ function createComment(comment) {
 
     const commentName = document.createElement("h2");
     commentName.innerText = comment.commentName;
+    commentName.classList.add("comments__name");
 
     const commentDate = document.createElement("p");
     commentDate.innerText = comment.commentDate;
-    // commentDate.classList.add("comments__default__dacommentDatetes");
+    commentDate.classList.add("comments__date");
 
     const commentInfo = document.createElement("p");
     commentInfo.innerText = comment.commentInfo;
+    commentInfo.classList.add("comments__info");
 
     // divImg.appendChild(commentImage);
     // div.append(commentName, commentDate, commentInfo);
@@ -71,7 +73,7 @@ function createComment(comment) {
     // commentsImgDefault.append(divImg);
     // divImg.append(commentImage);
     // imageId.append(divImg);
-    const commentsSection = document.querySelector(".comments__section");
+
     commentsSection.appendChild(div);
     div.appendChild(divImg);
     divImg.appendChild(commentImage);
@@ -106,7 +108,7 @@ formEl.addEventListener("submit", (e) => {
 
   comments.unshift(newComment);
 
-  commentsList.innerHTML = "";
+  commentsSection.innerHTML = "";
 
   displayComments(comments);
 

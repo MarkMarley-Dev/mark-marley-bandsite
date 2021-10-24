@@ -1,11 +1,13 @@
 const data = [
   {
+    commentImage: "",
     commentName: "Conor Walton ",
     commentDate: "02/17/2021",
     commentInfo:
       "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
   },
   {
+    commentImage: "",
     commentName: "Emilie Beach",
     commentDate: "01/09/2021",
     commentInfo:
@@ -31,11 +33,11 @@ let commentsList = document.getElementById("comments__list");
 
 function createComment(comment) {
   if (commentsList) {
-    const divImg = document.createElement("divImg");
-    divImg.classList.add("divImg");
-
     const div = document.createElement("div");
     div.classList.add("comments__form");
+
+    const divImg = document.createElement("divImg");
+    divImg.classList.add("divImg");
 
     const commentImage = document.createElement("img");
     // commentImage.setAttribute("src", "comment.commentImage");
@@ -43,11 +45,11 @@ function createComment(comment) {
 
     const commentName = document.createElement("h2");
     commentName.innerText = comment.commentName;
-    commentName.classList.add("comments__sub-title");
+    commentName.classList.add("comments__default__names");
 
-    div.classList.add("comments__default__names");
     const commentDate = document.createElement("p");
     commentDate.innerText = comment.commentDate;
+    // commentDate.classList.add("comments__default__dates");
 
     const commentInfo = document.createElement("p");
     commentInfo.innerText = comment.commentInfo;
@@ -57,8 +59,11 @@ function createComment(comment) {
     );
 
     divImg.append(commentImage);
-    div.append(commentImage, commentName, commentInfo, commentDate);
-    commentsList.appendChild(div, divImg);
+    div.appendChild(commentName);
+    div.appendChild(commentDate);
+    div.appendChild(commentInfo);
+    // div.appendChild(commentImage);
+    commentsList.append(div, divImg);
   }
 }
 
@@ -81,6 +86,7 @@ formEl.addEventListener("submit", (e) => {
   const newComment = {
     commentName,
     commentInfo,
+    commentDate,
   };
 
   comments.unshift(newComment);

@@ -18,6 +18,7 @@
   max-width: 100%;
   min-height: 30rem;
   padding: 1.6rem;
+
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -68,9 +69,64 @@
 }
 
 // ! .. Shows Section .. ! //
-.show__div {
-  display: flex;
-  flex-direction: column;
+
+.shows {
+  &__container {
+    padding-top: 2.4rem;
+    display: flex;
+    flex-direction: column;
+    background-color: $bandsite-white;
+  }
+
+  &__div {
+    padding: 1.6rem;
+    border-top: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid $bandsite-mercury;
+    line-height: 2rem;
+  }
+  &__title {
+    color: $bandsite-black;
+    font-size: 2.4rem;
+    border-top: 1.6rem;
+    padding: 0 0 1.6rem 1.6rem;
+  }
+  &__date__container {
+    color: $bandsite-silver;
+    font-size: 1.3rem;
+  }
+  &__date__actual {
+    color: $bandsite-black;
+    font-size: 1.4rem;
+    font-weight: 550;
+  }
+  &__venue__container {
+    color: $bandsite-silver;
+    font-size: 1.3rem;
+  }
+  &__venue__actual {
+    color: $bandsite-black;
+    font-size: 1.4rem;
+  }
+  &__location__container {
+    color: $bandsite-silver;
+    font-size: 1.3rem;
+  }
+  &__location__actual {
+    color: $bandsite-black;
+    font-size: 1.4rem;
+  }
+
+  &__buy__tickets__btn {
+    min-width: 80vw;
+    min-height: 4rem;
+    margin-top: 1.6rem;
+    background-color: $bandsite-black;
+    color: $bandsite-white;
+    font-size: 2rem;
+    border-radius: 0.4rem;
+  }
 }
 // ! .. Footer Section Below .. ! //
 .footer {

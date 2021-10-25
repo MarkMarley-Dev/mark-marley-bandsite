@@ -291,9 +291,59 @@
   line-height: 4.4rem;
 }
 
-.show__div {
+.shows__container {
+  padding-top: 2.4rem;
   display: flex;
   flex-direction: column;
+  background-color: #ffffff;
+}
+.shows__div {
+  padding: 1.6rem;
+  border-top: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #e1e1e1;
+  line-height: 2rem;
+}
+.shows__title {
+  color: #323232;
+  font-size: 2.4rem;
+  border-top: 1.6rem;
+  padding: 0 0 1.6rem 1.6rem;
+}
+.shows__date__container {
+  color: #afafaf;
+  font-size: 1.3rem;
+}
+.shows__date__actual {
+  color: #323232;
+  font-size: 1.4rem;
+  font-weight: 550;
+}
+.shows__venue__container {
+  color: #afafaf;
+  font-size: 1.3rem;
+}
+.shows__venue__actual {
+  color: #323232;
+  font-size: 1.4rem;
+}
+.shows__location__container {
+  color: #afafaf;
+  font-size: 1.3rem;
+}
+.shows__location__actual {
+  color: #323232;
+  font-size: 1.4rem;
+}
+.shows__buy__tickets__btn {
+  min-width: 80vw;
+  min-height: 4rem;
+  margin-top: 1.6rem;
+  background-color: #323232;
+  color: #ffffff;
+  font-size: 2rem;
+  border-radius: 0.4rem;
 }
 
 .footer {

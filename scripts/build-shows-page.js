@@ -38,40 +38,50 @@ shows.map((shows) => shows.value);
 
 // ! .. Shows List .. ! //
 
-const showsContainer = document.querySelector(".shows__Container");
+const showsContainer = document.querySelector(".shows__container");
+showsContainer.classList.add("shows__container");
+
+const showTitle = document.createElement("show__title");
+showTitle.classList.add("shows__title");
+showTitle.innerText = "Shows";
+
+const showTitleContainer = document.createElement("show__title__container");
+showTitleContainer.classList.add("shows__title__container");
+showsContainer.appendChild(showTitleContainer);
+showTitleContainer.appendChild(showTitle);
 
 function createShow(show) {
   if (showsContainer) {
     const showDiv = document.createElement("show__div");
-    showDiv.classList.add("show__div");
+    showDiv.classList.add("shows__div");
 
     const dateContainer = document.createElement("date__container");
     dateContainer.innerText = "Date";
-    dateContainer.classList.add("date__container");
+    dateContainer.classList.add("shows__date__container");
 
     const showDateContainer = document.createElement("show__date");
-    showDateContainer.classList.add("show__date__container");
+    showDateContainer.classList.add("shows__date__actual");
     showDateContainer.innerText = show.date;
 
     const venueContainer = document.createElement("venue__container");
-    venueContainer.classList.add("venue__container");
+    venueContainer.classList.add("shows__venue__container");
     venueContainer.innerText = "Venue";
 
     const showVenueContainer = document.createElement("show__venue");
-    showVenueContainer.classList.add("show__venue__container");
+    showVenueContainer.classList.add("shows__venue__actual");
     showVenueContainer.innerText = show.venue;
 
     const locationContainer = document.createElement("location__container");
-    locationContainer.classList.add("location__container");
+    locationContainer.classList.add("shows__location__container");
     locationContainer.innerText = "Location";
 
     const showLocationContainer = document.createElement("show__container");
-    showLocationContainer.classList.add("show__location__container");
+    showLocationContainer.classList.add("shows__location__actual");
     showLocationContainer.innerText = show.location;
 
-    const buyTicketsBtn = document.createElement("buy_btn");
-    buyTicketsBtn.classList.add("buy__tickets__btn");
-    buyTicketsBtn.innerText = "BUY TICKETS";
+    const buyTicketsBtn = document.createElement("button");
+    buyTicketsBtn.classList.add("shows__buy__tickets__btn");
+    buyTicketsBtn.innerText = "Buy Tickets";
 
     showsContainer.appendChild(showDiv);
     showDiv.appendChild(dateContainer);
@@ -88,23 +98,3 @@ function displayShows(shows) {
 }
 
 displayShows(shows);
-
-console.log(shows.date);
-
-// ! Create functionality
-
-const formEl = document.querySelector(".create__form");
-
-const newComment = {
-  date,
-  venue,
-  location,
-};
-
-shows.unshift(newComment);
-
-showsContainer.innerHTML = "";
-
-displayComments(shows);
-
-e.target.reset();

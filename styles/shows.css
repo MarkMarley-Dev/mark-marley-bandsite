@@ -238,20 +238,47 @@
 .hero {
   display: flex;
   background-color: #323232;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: center;
   opacity: 0.5;
   max-width: 100%;
-  min-height: 20rem;
+  min-height: 30rem;
+  padding: 1.6rem;
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   background-image: url("../assets/Images/Photo-gallery-3.jpg");
 }
-.hero .hero__title {
+.hero__title {
   font-size: 2.4rem;
   line-height: 3.2rem;
   font-weight: 700;
   padding-left: 1.6rem;
   color: #ffffff;
+  align-self: flex-start;
+}
+.hero__title__sub-title {
+  font-size: 2.4rem;
+  line-height: 3.2rem;
+  font-weight: 400;
+  padding-left: 1.6rem;
+  color: #ffffff;
+  align-self: flex-start;
+}
+.hero__soundcloud__container {
+  display: flex;
   align-self: center;
+}
+.hero__soundcloud__i-frame {
+  display: flex;
+  border-radius: 0.4rem;
+  max-height: 12rem;
+  min-width: 37.5rem;
+  border: 1.6rem;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 @media only screen and (min-width: 768px) {
   .hero {
@@ -262,6 +289,11 @@
 .hero .hero__title {
   font-size: 3.6rem;
   line-height: 4.4rem;
+}
+
+.show__div {
+  display: flex;
+  flex-direction: column;
 }
 
 .footer {

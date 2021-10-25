@@ -24,17 +24,11 @@ const data = [
 
 let comments = data;
 
-const shoppingCart = [];
 // higer order function for each going over comments for each
 comments.map((comments) => comments.value);
 
 // ! Comments List
 const commentsSection = document.querySelector(".comments__section");
-// let imageId = document.getElementById("comment__imageId");
-// console.log(imageId);
-// let nameId = document.getElementById("comment__nameId");
-// let dateId = document.getElementById("comment__dateId");
-// let commentInfoID = document.getElementById("comment__infoId");
 
 function createComment(comment) {
   if (commentsSection) {
@@ -66,14 +60,6 @@ function createComment(comment) {
     commentInfo.innerText = comment.commentInfo;
     commentInfo.classList.add("comments__info");
 
-    // divImg.appendChild(commentImage);
-    // div.append(commentName, commentDate, commentInfo);
-    // // div.appendChild(commentImage);
-    // commentsList.append(div);
-    // commentsImgDefault.append(divImg);
-    // divImg.append(commentImage);
-    // imageId.append(divImg);
-
     commentsSection.appendChild(div);
     div.appendChild(divImg);
     divImg.appendChild(commentImage);
@@ -95,22 +81,15 @@ displayComments(comments);
 
 const formEl = document.querySelector(".create__form");
 
-formEl.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const commentName = e.target.commentName.value;
+const newComment = {
+  commentName,
+  commentInfo,
+};
 
-  const commentInfo = e.target.commentInfo.value;
+comments.unshift(newComment);
 
-  const newComment = {
-    commentName,
-    commentInfo,
-  };
+commentsSection.innerHTML = "";
 
-  comments.unshift(newComment);
+displayComments(comments);
 
-  commentsSection.innerHTML = "";
-
-  displayComments(comments);
-
-  e.target.reset();
-});
+e.target.reset();

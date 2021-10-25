@@ -50,6 +50,16 @@ showTitleContainer.classList.add("shows__title__container");
 showsContainer.appendChild(showTitleContainer);
 showTitleContainer.appendChild(showTitle);
 
+const showTableHeader = document.createElement("show__table__headers");
+showTableHeader.classList.add("show__table__headers");
+showTableHeader.innerHTML = "SHOW VENUE LOCATION";
+
+document.querySelector(".shows__div");
+const mqTablet = window.matchMedia("(min-width: 768px)");
+{
+  showsContainer.appendChild(showTableHeader);
+}
+
 function createShow(show) {
   if (showsContainer) {
     const showDiv = document.createElement("show__div");
@@ -93,6 +103,7 @@ function createShow(show) {
     showDiv.appendChild(buyTicketsBtn);
   }
 }
+
 function displayShows(shows) {
   shows.forEach((show) => createShow(show));
 }

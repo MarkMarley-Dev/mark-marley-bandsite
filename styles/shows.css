@@ -282,13 +282,26 @@
 }
 @media only screen and (min-width: 768px) {
   .hero {
-    min-height: 30rem;
+    display: flex;
+    justify-content: space-around;
+    min-height: 45rem;
     min-width: 100%;
   }
-}
-.hero .hero__title {
-  font-size: 3.6rem;
-  line-height: 4.4rem;
+  .hero .hero__title {
+    font-size: 6rem;
+    line-height: 6rem;
+    letter-spacing: 0.2rem;
+  }
+  .hero__title__sub-title {
+    font-size: 3.2rem;
+    padding-top: 2rem;
+  }
+  .hero__soundcloud__container {
+    display: flex;
+    align-self: flex-start;
+    padding-top: 2rem;
+    justify-content: flex-start;
+  }
 }
 
 .shows__container {
@@ -337,13 +350,26 @@
   font-size: 1.4rem;
 }
 .shows__buy__tickets__btn {
-  min-width: 80vw;
+  max-width: 40rem;
   min-height: 4rem;
   margin-top: 1.6rem;
   background-color: #323232;
   color: #ffffff;
   font-size: 2rem;
   border-radius: 0.4rem;
+}
+@media only screen and (min-width: 768px) {
+  .shows__div {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .shows__date__container, .shows__venue__container, .shows__location__container {
+    display: none;
+  }
+  .shows .show__table__headers {
+    color: #afafaf;
+    font-size: 5rem;
+  }
 }
 
 .footer {
@@ -456,7 +482,7 @@
     justify-content: flex-start;
   }
 }
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 768px) and (min-width: 1024px) {
   .footer .social__contact__section {
     justify-content: flex-start;
     height: 20rem;

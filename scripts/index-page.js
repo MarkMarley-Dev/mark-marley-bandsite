@@ -74,22 +74,26 @@ function createComment(comment) {
 function displayComments(comments) {
   comments.forEach((comment) => createComment(comment));
 }
-
 displayComments(comments);
 
 // ! Create functionality
 
 const formEl = document.querySelector(".create__form");
+formEl.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const commentName = e.target.commentName.value;
+  const commentInfo = e.target.commentInfo.value;
 
-const newComment = {
-  commentName,
-  commentInfo,
-};
+  const newComment = {
+    commentName,
+    commentInfo,
+  };
 
-comments.unshift(newComment);
+  comments.unshift(newComment);
 
-commentsSection.innerHTML = "";
+  commentsSection.innerHTML = "";
 
-displayComments(comments);
+  displayComments(comments);
 
-e.target.reset();
+  e.target.reset();
+});

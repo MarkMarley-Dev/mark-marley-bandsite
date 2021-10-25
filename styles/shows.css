@@ -1,0 +1,394 @@
+@font-face {
+  font-family: "Avenir";
+  src: url(../../assets/Font/AvenirNextLTPro-Regular.otf) format("otf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Avenir";
+  src: url(../../assets/Font/AvenirNextLTPro-Demi.otf) format("otf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Avenir";
+  src: url(../../assets/Font/AvenirNextLTPro-Bold.otf) format("otf");
+  font-weight: 700;
+}
+.nav {
+  display: flex;
+  flex-direction: column;
+  background-color: #323232;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 120px;
+}
+.nav__brand__img {
+  min-width: 12rem;
+  min-height: 2rem;
+  padding-top: 1.6rem;
+}
+.nav__container {
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+.nav .nav__container--links {
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  color: #afafaf;
+  padding-bottom: 1.6rem;
+  width: 50%;
+}
+.nav .nav__container--links--active {
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  color: #ffffff;
+  padding-bottom: 1.6rem;
+  width: 50vw;
+  border-bottom: 4px solid white;
+}
+@media only screen and (min-width: 768px) {
+  .nav {
+    flex-direction: row;
+  }
+  .nav .nav__container {
+    justify-content: flex-start;
+    padding: 3rem 4rem 0 4rem;
+  }
+  .nav .nav__brand__img {
+    padding-left: 2.4rem;
+  }
+  .nav .nav__container--links,
+.nav .nav__container--links--active {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  .nav .nav__container--links {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding-left: 4rem;
+  }
+}
+
+.headers__mobile {
+  padding: 1.6rem 1.6rem 0 1.6rem;
+  font-size: 2.4rem;
+  line-height: 3.2rem;
+  font-weight: 700;
+}
+
+.footer {
+  width: 100%;
+  background-color: #323232;
+  color: #ffffff;
+  padding: 1.6rem 1.6rem 0 1.6rem;
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+  font-weight: 400;
+}
+.footer .footer__icon {
+  padding-right: 2rem;
+}
+.footer .nav__logo__tabplus {
+  display: none;
+}
+.footer .footer__title {
+  font-size: 2.4rem;
+  line-height: 3.2rem;
+  padding: 2.4rem 0 1.6rem 0;
+}
+.footer .social__contact {
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+  font-weight: 400;
+  padding: 1.6rem 0 0 0;
+}
+.footer .social__standout {
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+  font-weight: 700;
+  padding: 1.6rem 0 0 0;
+}
+.footer .social__copyright {
+  padding: 1.6rem 0 1.6rem 0;
+}
+.footer .footer__logo {
+  min-width: 12rem;
+  min-height: 2rem;
+  padding-top: 1.6rem;
+}
+.footer .footer__text {
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+  font-weight: 400;
+}
+@media only screen and (min-width: 768px) {
+  .footer {
+    display: flex;
+    width: 100vw;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  .footer .social__contact__section {
+    display: flex;
+    width: 100vw;
+    justify-content: space-evenly;
+    height: 15rem;
+    flex-wrap: wrap;
+  }
+  .footer .footer__bandsite {
+    display: flex;
+    width: 50vw;
+    justify-content: flex-end;
+    align-self: center;
+  }
+  .footer .nav__logo__tabplus {
+    display: flex;
+    height: 2rem;
+    width: 12rem;
+  }
+  .footer .social__contact {
+    min-width: 30%;
+  }
+  .footer .footer__title {
+    font-size: 3.6rem;
+    padding-left: 4rem;
+    display: flex;
+    justify-content: flex-start;
+  }
+  .footer .footer__text {
+    font-size: 1.6rem;
+    line-height: 2rem;
+  }
+  .footer .nav__brand__img {
+    padding-left: 10rem;
+    display: none;
+  }
+  .footer .footer__icons {
+    display: inline-flex;
+    padding: 1rem 0 0 2rem;
+  }
+  .footer .footer__top {
+    display: flex;
+    flex-direction: row;
+    min-width: 100vw;
+    justify-content: flex-start;
+  }
+  .footer .footer_bottom {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  .footer .social__copyright {
+    min-width: 58rem;
+    padding-left: 21.8rem;
+    justify-content: flex-start;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .footer .social__contact__section {
+    justify-content: flex-start;
+    height: 20rem;
+  }
+  .footer .social__contacts {
+    padding: 2rem 2rem 0 5rem;
+  }
+  .footer .social__copyright {
+    padding: 0 0 2rem 17rem;
+  }
+  .footer .footer__title {
+    padding-right: 2rem;
+  }
+  .footer .footer__bandsite {
+    width: 57vw;
+  }
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+  font-weight: inherit;
+  font-family: inherit;
+  font-style: inherit;
+  font-size: 10px;
+  border: 0 none;
+  outline: 0;
+  margin: 0;
+  font-family: AvenirNextLTPro;
+}
+* ::-moz-placeholder, *:after ::-moz-placeholder, *:before ::-moz-placeholder {
+  overflow: visible;
+}
+* :-ms-input-placeholder, *:after :-ms-input-placeholder, *:before :-ms-input-placeholder {
+  overflow: visible;
+}
+* ::placeholder,
+*:after ::placeholder,
+*:before ::placeholder {
+  overflow: visible;
+}
+
+.hero {
+  display: flex;
+  background-color: #323232;
+  opacity: 0.5;
+  max-width: 100%;
+  min-height: 20rem;
+  background-size: cover;
+  background-position: center;
+  background-image: url("../assets/Images/Photo-gallery-3.jpg");
+}
+.hero .hero__title {
+  font-size: 2.4rem;
+  line-height: 3.2rem;
+  font-weight: 700;
+  padding-left: 1.6rem;
+  color: #ffffff;
+  align-self: center;
+}
+@media only screen and (min-width: 768px) {
+  .hero {
+    min-height: 30rem;
+    min-width: 100%;
+  }
+}
+.hero .hero__title {
+  font-size: 3.6rem;
+  line-height: 4.4rem;
+}
+
+.footer {
+  width: 100%;
+  background-color: #323232;
+  color: #ffffff;
+  padding: 1.6rem 1.6rem 0 1.6rem;
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+  font-weight: 400;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.footer .footer__icon {
+  padding-right: 2rem;
+}
+.footer .nav__logo__tabplus {
+  display: none;
+}
+.footer .footer__title {
+  font-size: 2.4rem;
+  line-height: 3.2rem;
+  padding: 2.4rem 0 1.6rem 0;
+}
+.footer .social__contact {
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+  font-weight: 400;
+  padding: 1.6rem 0 0 0;
+}
+.footer .social__standout {
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+  font-weight: 700;
+  padding: 1.6rem 0 0 0;
+}
+.footer .social__copyright {
+  padding: 1.6rem 0 1.6rem 0;
+}
+.footer .footer__logo {
+  min-width: 12rem;
+  min-height: 2rem;
+  padding-top: 1.6rem;
+}
+.footer .footer__text {
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+  font-weight: 400;
+}
+@media only screen and (min-width: 768px) {
+  .footer {
+    display: flex;
+    width: 100vw;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  .footer .social__contact__section {
+    display: flex;
+    width: 100vw;
+    justify-content: space-evenly;
+    height: 15rem;
+    flex-wrap: wrap;
+  }
+  .footer .footer__bandsite {
+    display: flex;
+    width: 50vw;
+    justify-content: flex-end;
+    align-self: center;
+  }
+  .footer .nav__logo__tabplus {
+    display: flex;
+    height: 2rem;
+    width: 12rem;
+  }
+  .footer .social__contact {
+    min-width: 30%;
+  }
+  .footer .footer__title {
+    font-size: 3.6rem;
+    padding-left: 4rem;
+    display: flex;
+    justify-content: flex-start;
+  }
+  .footer .footer__text {
+    font-size: 1.6rem;
+    line-height: 2rem;
+  }
+  .footer .nav__brand__img {
+    padding-left: 10rem;
+    display: none;
+  }
+  .footer .footer__icons {
+    display: inline-flex;
+    padding: 1rem 0 0 2rem;
+  }
+  .footer .footer__top {
+    display: flex;
+    flex-direction: row;
+    min-width: 100vw;
+    justify-content: flex-start;
+  }
+  .footer .footer_bottom {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  .footer .social__copyright {
+    min-width: 58rem;
+    padding-left: 21.8rem;
+    justify-content: flex-start;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .footer .social__contact__section {
+    justify-content: flex-start;
+    height: 20rem;
+  }
+  .footer .social__contacts {
+    padding: 2rem 2rem 0 5rem;
+  }
+  .footer .social__copyright {
+    padding: 0 0 2rem 17rem;
+  }
+  .footer .footer__title {
+    padding-right: 2rem;
+  }
+  .footer .footer__bandsite {
+    width: 57vw;
+  }
+}/*# sourceMappingURL=shows.css.map */

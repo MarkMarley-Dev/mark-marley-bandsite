@@ -1,15 +1,15 @@
 @font-face {
-  font-family: "AvenirNextRegular";
+  font-family: "Avenir";
   src: url(../../assets/Font/AvenirNextLTPro-Regular.otf) format("otf");
   font-weight: 400;
 }
 @font-face {
-  font-family: "AvenirNextDemi";
+  font-family: "Avenir";
   src: url(../../assets/Font/AvenirNextLTPro-Demi.otf) format("otf");
   font-weight: 600;
 }
 @font-face {
-  font-family: "AvenirNextBold";
+  font-family: "Avenir";
   src: url(../../assets/Font/AvenirNextLTPro-Bold.otf) format("otf");
   font-weight: 700;
 }
@@ -22,12 +22,12 @@
   width: 100%;
   height: 120px;
 }
-.nav .nav__brand__img {
+.nav__brand__img {
   min-width: 12rem;
   min-height: 2rem;
   padding-top: 1.6rem;
 }
-.nav .nav__container {
+.nav__container {
   display: flex;
   list-style: none;
   justify-content: space-around;
@@ -85,6 +85,7 @@
 }
 
 .footer {
+  width: 100%;
   background-color: #323232;
   color: #ffffff;
   padding: 1.6rem 1.6rem 0 1.6rem;
@@ -220,7 +221,6 @@
   border: 0 none;
   outline: 0;
   margin: 0;
-  font-size: 10px;
   font-family: AvenirNextLTPro;
 }
 * ::-moz-placeholder, *:after ::-moz-placeholder, *:before ::-moz-placeholder {

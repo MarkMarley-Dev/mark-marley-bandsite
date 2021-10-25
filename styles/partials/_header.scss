@@ -1,3 +1,7 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+@use "./breakpoints" as *;
+
 .nav {
   display: flex;
   flex-direction: column;
@@ -7,13 +11,13 @@
   width: 100%;
   height: 120px;
 
-  .nav__brand__img {
+  &__brand__img {
     min-width: 12rem;
     min-height: 2rem;
     padding-top: 1.6rem;
   }
 
-  .nav__container {
+  &__container {
     display: flex;
     list-style: none;
     justify-content: space-around;
@@ -68,13 +72,3 @@
   line-height: 3.2rem;
   font-weight: 700;
 }
-
-// .headers__mobile__hero {
-//   justify-self: flex-start;
-//   align-self: center;
-//   font-size: 2.4rem;
-//   line-height: 3.2rem;
-//   font-weight: 700;
-//   color: $bandsite-white;
-//   padding-right: 3rem;
-// }

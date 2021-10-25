@@ -176,15 +176,15 @@
   }
   .mobile__images {
     max-width: 38rem;
+    margin: 0 auto;
 
     padding: $mobile__heading--padding;
   }
 
   // ! .. Media Queries .. ! //
   @include small {
-    .mobile__images {
-      margin: 0 auto;
-    }
+    // .mobile__images {
+    // }
 
     @include medium {
       width: 100vw;
@@ -203,7 +203,7 @@
       }
 
       .mobile__images {
-        max-width: 260px;
+        max-width: 24rem;
         max-height: 150px;
         @include img__quality;
         padding: 0 0.8rem 0 0.8rem;

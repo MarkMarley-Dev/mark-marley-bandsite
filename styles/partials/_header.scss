@@ -1,10 +1,8 @@
-@use "./partials/variables" as *;
-@use "./partials/breakpoints" as *;
-@use "./partials/mixins" as *;
-@use "./partials/typography" as *;
-@use "./partials/header" as *;
-@use "./partials/footer" as *;
-@use "./partials/resets" as *;
+@use "./variables" as *;
+@use "./breakpoints" as *;
+@use "./mixins" as *;
+@use "./typography" as *;
+@use "./resets" as *;
 
 .nav {
   display: flex;

@@ -13,6 +13,31 @@
   src: url(../../assets/Font/AvenirNextLTPro-Bold.otf) format("otf");
   font-weight: 700;
 }
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+  font-weight: inherit;
+  font-family: inherit;
+  font-style: inherit;
+  font-size: 10px;
+  border: 0 none;
+  outline: 0;
+  margin: 0;
+  font-family: AvenirNextLTPro;
+}
+* ::-moz-placeholder, *:after ::-moz-placeholder, *:before ::-moz-placeholder {
+  overflow: visible;
+}
+* :-ms-input-placeholder, *:after :-ms-input-placeholder, *:before :-ms-input-placeholder {
+  overflow: visible;
+}
+* ::placeholder,
+*:after ::placeholder,
+*:before ::placeholder {
+  overflow: visible;
+}
+
 .nav {
   display: flex;
   flex-direction: column;
@@ -208,31 +233,6 @@
   .footer .footer__bandsite {
     width: 57vw;
   }
-}
-
-*,
-*:after,
-*:before {
-  box-sizing: border-box;
-  font-weight: inherit;
-  font-family: inherit;
-  font-style: inherit;
-  font-size: 10px;
-  border: 0 none;
-  outline: 0;
-  margin: 0;
-  font-family: AvenirNextLTPro;
-}
-* ::-moz-placeholder, *:after ::-moz-placeholder, *:before ::-moz-placeholder {
-  overflow: visible;
-}
-* :-ms-input-placeholder, *:after :-ms-input-placeholder, *:before :-ms-input-placeholder {
-  overflow: visible;
-}
-* ::placeholder,
-*:after ::placeholder,
-*:before ::placeholder {
-  overflow: visible;
 }
 
 .hero {

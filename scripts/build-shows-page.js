@@ -36,22 +36,63 @@ let shows = data;
 
 shows.map((shows) => shows.value);
 
+// ! .. Api Data .. ! //
+
+const BASE_API = "https://project-1-api.herokuapp.com/";
+const REGISTER_API = "https://project-1-api.herokuapp.com/register";
+const PERSONAL_API_KEY = "48c86835-2e4a-4a12-950d-b7f00dfde05d";
+const REQUEST_API = (request) =>
+  ` https://project-1-api.herokuapp.com/${request}?api_key=48c86835-2e4a-4a12-950d-b7f00dfde05d`;
+
+// ? .. REGISTER REQUEST FOR API KEY.. ? //
+
+axios
+  .get(REGISTER_API)
+  .then((response) => console.log(response.data))
+  .catch((err) => console.log("Something went wrong: ", err));
+
+// ? .. GET COMMENTS .. ? //
+axios
+  .get(REQUEST_API("comments"))
+  .then((response) => console.log(response.data))
+  .catch((err) => console.log("Something went wrong: ", err));
+
+axios
+  .get(REQUEST_API("showdates"))
+  .then((response) => console.log(response.data))
+  .catch((err) => console.log("Something went wrong: ", err));
+
+let lst = [];
+const populateData = (data) => {
+  lst = data.slice();
+  console.log(lst);
+};
+
+axios
+  .get(REQUEST_API("comments"))
+  .then(function (response) {
+    populateData(response.data);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+
 // ! .. Shows List .. ! //
 
-const showsContainer = document.querySelector(".shows__container");
+const showsContainer = document.querySelector(".shows-container");
 showsContainer.classList.add("shows__container");
 
-const showTitle = document.createElement("show__title");
-showTitle.classList.add("shows__title");
+const showTitle = document.createElement("show-title");
+showTitle.classList.add("shows-title");
 showTitle.innerText = "Shows";
 
-const showTitleContainer = document.createElement("show__title__container");
-showTitleContainer.classList.add("shows__title__container");
+const showTitleContainer = document.createElement("show__title-container");
+showTitleContainer.classList.add("shows__title-container");
 showsContainer.appendChild(showTitleContainer);
 showTitleContainer.appendChild(showTitle);
 
-const showTableHeader = document.createElement("show__table__headers");
-showTableHeader.classList.add("show__table__headers");
+const showTableHeader = document.createElement("show__table-headers");
+showTableHeader.classList.add("show__table-headers");
 showTableHeader.innerHTML = "SHOW VENUE LOCATION";
 
 document.querySelector(".shows__div");
@@ -65,32 +106,32 @@ function createShow(show) {
     const showDiv = document.createElement("show__div");
     showDiv.classList.add("shows__div");
 
-    const dateContainer = document.createElement("date__container");
+    const dateContainer = document.createElement("date-container");
     dateContainer.innerText = "Date";
-    dateContainer.classList.add("shows__date__container");
+    dateContainer.classList.add("shows__date-container");
 
     const showDateContainer = document.createElement("show__date");
-    showDateContainer.classList.add("shows__date__actual");
+    showDateContainer.classList.add("shows__date-actual");
     showDateContainer.innerText = show.date;
 
     const venueContainer = document.createElement("venue__container");
-    venueContainer.classList.add("shows__venue__container");
+    venueContainer.classList.add("shows__venue-container");
     venueContainer.innerText = "Venue";
 
     const showVenueContainer = document.createElement("show__venue");
-    showVenueContainer.classList.add("shows__venue__actual");
+    showVenueContainer.classList.add("shows__venue-actual");
     showVenueContainer.innerText = show.venue;
 
     const locationContainer = document.createElement("location__container");
-    locationContainer.classList.add("shows__location__container");
+    locationContainer.classList.add("shows__location-container");
     locationContainer.innerText = "Location";
 
     const showLocationContainer = document.createElement("show__container");
-    showLocationContainer.classList.add("shows__location__actual");
+    showLocationContainer.classList.add("shows__location-actual");
     showLocationContainer.innerText = show.location;
 
     const buyTicketsBtn = document.createElement("button");
-    buyTicketsBtn.classList.add("shows__buy__tickets__btn");
+    buyTicketsBtn.classList.add("shows__buy__tickets-btn");
     buyTicketsBtn.innerText = "Buy Tickets";
 
     showsContainer.appendChild(showDiv);

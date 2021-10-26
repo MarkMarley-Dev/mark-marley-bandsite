@@ -47,7 +47,7 @@
   width: 100%;
   height: 120px;
 }
-.nav__brand__img {
+.nav__brand-img {
   min-width: 12rem;
   min-height: 2rem;
   padding-top: 1.6rem;
@@ -60,7 +60,7 @@
   margin: 0;
   padding: 0;
 }
-.nav .nav__container--links {
+.nav .nav__container-links {
   display: flex;
   justify-content: center;
   font-size: 2rem;
@@ -68,7 +68,7 @@
   padding-bottom: 1.6rem;
   width: 50%;
 }
-.nav .nav__container--links--active {
+.nav .nav__container-links--active {
   display: flex;
   justify-content: center;
   font-size: 2rem;
@@ -85,23 +85,22 @@
     justify-content: flex-start;
     padding: 3rem 4rem 0 4rem;
   }
-  .nav .nav__brand__img {
+  .nav .nav__brand-img {
     padding-left: 2.4rem;
   }
-  .nav .nav__container--links,
+  .nav .nav__container-links,
 .nav .nav__container--links--active {
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
   }
-  .nav .nav__container--links {
+  .nav .nav__container-links {
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
     padding-left: 4rem;
   }
 }
-
 .headers__mobile {
   padding: 1.6rem 1.6rem 0 1.6rem;
   font-size: 2.4rem;
@@ -121,7 +120,7 @@
 .footer .footer__icon {
   padding-right: 2rem;
 }
-.footer .nav__logo__tabplus {
+.footer .nav__logo-tabplus {
   display: none;
 }
 .footer .footer__title {
@@ -161,7 +160,7 @@
     flex-wrap: wrap;
     flex-direction: row;
   }
-  .footer .social__contact__section {
+  .footer .social__contact-section {
     display: flex;
     width: 100vw;
     justify-content: space-evenly;
@@ -174,7 +173,7 @@
     justify-content: flex-end;
     align-self: center;
   }
-  .footer .nav__logo__tabplus {
+  .footer .nav__logo-tabplus {
     display: flex;
     height: 2rem;
     width: 12rem;
@@ -192,7 +191,7 @@
     font-size: 1.6rem;
     line-height: 2rem;
   }
-  .footer .nav__brand__img {
+  .footer .nav__brand-img {
     padding-left: 10rem;
     display: none;
   }
@@ -217,7 +216,7 @@
   }
 }
 @media only screen and (min-width: 1024px) {
-  .footer .social__contact__section {
+  .footer .social__contact-section {
     justify-content: flex-start;
     height: 20rem;
   }
@@ -343,7 +342,7 @@
     line-height: 3.2rem;
     font-weight: 600;
   }
-  .about .about__info__box {
+  .about .about__info-box {
     display: flex;
     flex-direction: row;
     width: 100vw;
@@ -365,7 +364,7 @@
   .about .about__title {
     padding-left: 6rem;
   }
-  .about .about__info__box {
+  .about .about__info-box {
     padding: 0 9rem;
   }
   .about .about__subtitle {
@@ -512,7 +511,7 @@ li {
   border: #323232 1px solid;
 }
 
-.comment__text-area__name {
+.comment__text-area-name {
   display: flex;
   border: 1px solid #e1e1e1;
   border-radius: 0.4rem;
@@ -523,7 +522,7 @@ li {
   height: 3.6rem;
   font-size: 1.4rem;
 }
-.comment__text-area__name:active {
+.comment__text-area-name:active {
   border: #323232 1px solid;
 }
 
@@ -534,7 +533,7 @@ li {
   flex-direction: row;
 }
 
-.comments__default__img {
+.comments__default-img {
   display: flex;
   border-radius: 50%;
   min-height: 3.6rem;
@@ -550,7 +549,7 @@ li {
   background-color: #e1e1e1;
 }
 
-.comments__default__names {
+.comments__default-names {
   display: flex;
   flex-direction: column;
   font-size: 1.4rem;
@@ -561,7 +560,7 @@ li {
   line-height: 2rem;
 }
 
-.comments__default__dates {
+.comments__default-dates {
   display: flex;
   flex-wrap: wrap-reverse;
   align-content: center;
@@ -571,7 +570,7 @@ li {
   padding-left: 8rem;
 }
 
-.comments__default__info {
+.comments__default-info {
   padding-left: 5rem;
   color: #323232;
   font-size: 1.2rem;
@@ -675,7 +674,7 @@ li {
 .footer .footer__icon {
   padding-right: 2rem;
 }
-.footer .nav__logo__tabplus {
+.footer .nav__logo-tabplus {
   display: none;
 }
 .footer .footer__title {
@@ -715,7 +714,7 @@ li {
     flex-wrap: wrap;
     flex-direction: row;
   }
-  .footer .social__contact__section {
+  .footer .social__contact-section {
     display: flex;
     width: 100vw;
     justify-content: space-evenly;
@@ -728,7 +727,7 @@ li {
     justify-content: flex-end;
     align-self: center;
   }
-  .footer .nav__logo__tabplus {
+  .footer .nav__logo-tabplus {
     display: flex;
     height: 2rem;
     width: 12rem;
@@ -746,7 +745,7 @@ li {
     font-size: 1.6rem;
     line-height: 2rem;
   }
-  .footer .nav__brand__img {
+  .footer .nav__brand-img {
     padding-left: 10rem;
     display: none;
   }
@@ -771,7 +770,7 @@ li {
   }
 }
 @media only screen and (min-width: 1024px) {
-  .footer .social__contact__section {
+  .footer .social__contact-section {
     justify-content: flex-start;
     height: 20rem;
   }

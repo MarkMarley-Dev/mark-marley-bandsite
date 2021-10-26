@@ -39,11 +39,11 @@
     color: $bandsite-white;
     align-self: flex-start;
   }
-  &__soundcloud__container {
+  &__soundcloud-container {
     display: flex;
     align-self: center;
   }
-  &__soundcloud__i-frame {
+  &__soundcloud-i-frame {
     display: flex;
     border-radius: 0.4rem;
     max-height: 12rem;
@@ -72,7 +72,7 @@
       font-size: 3.2rem;
       padding-top: 2rem;
     }
-    &__soundcloud__container {
+    &__soundcloud-container {
       display: flex;
       align-self: flex-start;
       padding-top: 2rem;
@@ -104,33 +104,33 @@
     border-top: 1.6rem;
     padding: 0 0 1.6rem 1.6rem;
   }
-  &__date__container {
+  &__date-container {
     color: $bandsite-silver;
     font-size: 1.3rem;
   }
-  &__date__actual {
+  &__date-actual {
     color: $bandsite-black;
     font-size: 1.4rem;
     font-weight: 550;
   }
-  &__venue__container {
+  &__venue-container {
     color: $bandsite-silver;
     font-size: 1.3rem;
   }
-  &__venue__actual {
+  &__venue-actual {
     color: $bandsite-black;
     font-size: 1.4rem;
   }
-  &__location__container {
+  &__location-container {
     color: $bandsite-silver;
     font-size: 1.3rem;
   }
-  &__location__actual {
+  &__location-actual {
     color: $bandsite-black;
     font-size: 1.4rem;
   }
 
-  &__buy__tickets__btn {
+  &__buy__tickets-btn {
     max-width: 40rem;
     min-height: 4rem;
     margin-top: 1.6rem;
@@ -147,12 +147,12 @@
       flex-direction: row;
       justify-content: space-between;
     }
-    &__date__container,
-    &__venue__container,
-    &__location__container {
+    &__date-container,
+    &__venue-container,
+    &__location-container {
       display: none;
     }
-    .show__table__headers {
+    .show__table-headers {
       color: $bandsite-silver;
       font-size: 5rem;
     }
@@ -172,7 +172,7 @@
   .footer__icon {
     padding-right: 2rem;
   }
-  .nav__logo__tabplus {
+  .nav__logo-tabplus {
     display: none;
   }
 
@@ -218,7 +218,7 @@
     flex-wrap: wrap;
     flex-direction: row;
 
-    .social__contact__section {
+    .social__contact-section {
       display: flex;
       width: 100vw;
       justify-content: space-evenly;
@@ -231,7 +231,7 @@
       justify-content: flex-end;
       align-self: center;
     }
-    .nav__logo__tabplus {
+    .nav__logo-tabplus {
       display: flex;
       height: 2rem;
       width: 12rem;
@@ -249,9 +249,9 @@
       justify-content: flex-start;
     }
     .footer__text {
-      @include footer__tab__text;
+      @include footer__tab-text;
     }
-    .nav__brand__img {
+    .nav__brand-img {
       padding-left: 10rem;
       display: none;
     }
@@ -277,7 +277,7 @@
     }
 
     @include large {
-      .social__contact__section {
+      .social__contact-section {
         justify-content: flex-start;
         height: 20rem;
       }

@@ -120,7 +120,7 @@
       line-height: 3.2rem;
       font-weight: 600;
     }
-    .about__info__box {
+    .about__info-box {
       display: flex;
       flex-direction: row;
       width: 100vw;
@@ -142,7 +142,7 @@
     .about__title {
       padding-left: 6rem;
     }
-    .about__info__box {
+    .about__info-box {
       padding: 0 9rem;
     }
     .about__subtitle {
@@ -302,7 +302,7 @@ li {
   }
 }
 
-.comment__text-area__name {
+.comment__text-area-name {
   display: flex;
   border: 1px solid $bandsite-mercury;
   border-radius: 0.4rem;
@@ -322,7 +322,7 @@ li {
   flex-wrap: wrap;
   flex-direction: row;
 }
-.comments__default__img {
+.comments__default-img {
   display: flex;
   border-radius: 50%;
   min-height: 3.6rem;
@@ -335,7 +335,7 @@ li {
   width: fit-content;
   background-color: $bandsite-mercury;
 }
-.comments__default__names {
+.comments__default-names {
   display: flex;
   flex-direction: column;
   font-size: 1.4rem;
@@ -345,7 +345,7 @@ li {
   padding: 2rem 0 0 1rem;
   line-height: 2rem;
 }
-.comments__default__dates {
+.comments__default-dates {
   display: flex;
   flex-wrap: wrap-reverse;
   align-content: center;
@@ -355,7 +355,7 @@ li {
   padding-left: 8rem;
 }
 
-.comments__default__info {
+.comments__default-info {
   padding-left: 5rem;
   color: $bandsite-black;
   font-size: 1.2rem;
@@ -459,7 +459,7 @@ li {
   .footer__icon {
     padding-right: 2rem;
   }
-  .nav__logo__tabplus {
+  .nav__logo-tabplus {
     display: none;
   }
 
@@ -505,7 +505,7 @@ li {
     flex-wrap: wrap;
     flex-direction: row;
 
-    .social__contact__section {
+    .social__contact-section {
       display: flex;
       width: 100vw;
       justify-content: space-evenly;
@@ -518,7 +518,7 @@ li {
       justify-content: flex-end;
       align-self: center;
     }
-    .nav__logo__tabplus {
+    .nav__logo-tabplus {
       display: flex;
       height: 2rem;
       width: 12rem;
@@ -536,9 +536,9 @@ li {
       justify-content: flex-start;
     }
     .footer__text {
-      @include footer__tab__text;
+      @include footer__tab-text;
     }
-    .nav__brand__img {
+    .nav__brand-img {
       padding-left: 10rem;
       display: none;
     }
@@ -564,7 +564,7 @@ li {
     }
   }
   @include large {
-    .social__contact__section {
+    .social__contact-section {
       justify-content: flex-start;
       height: 20rem;
     }

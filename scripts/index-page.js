@@ -46,7 +46,7 @@ function createComment(comment) {
 
     const commentImage = document.createElement("img");
     commentImage.setAttribute("src", comment.commentImage);
-    commentImage.classList.add("comments__default__img");
+    commentImage.classList.add("comments__default-img");
 
     const commentName = document.createElement("h2");
     commentName.innerText = comment.commentName;

@@ -1,22 +1,42 @@
-@import "./partials/variables";
-@import "./partials/breakpoints";
-@import "./partials/mixins";
-@import "./partials/typography";
-@import "./partials/header";
+@use "./partials/variables" as *;
+@use "./partials/breakpoints" as *;
+@use "./partials/mixins" as *;
+@use "./partials/typography" as *;
+@use "./partials/header" as *;
+@use "./partials/footer" as *;
+@use "./partials/resets" as *;
 
-*,
-*:after,
-*:before {
-  box-sizing: border-box;
-  font-weight: inherit;
-  font-family: inherit;
-  font-style: inherit;
-  font-size: 10px;
-  border: 0 none;
-  outline: 0;
-  margin: 0;
-  font-size: 10px;
-  font-family: AvenirNextLTPro;
+// ! .. Hero .. ! //
+
+.hero {
+  display: flex;
+  background-color: $bandsite-black;
+  opacity: 0.5;
+  max-width: 100%;
+  min-height: 20rem;
+  background-size: cover;
+  background-position: center;
+  background-image: url("../assets/Images/hero-bio.jpg");
+
+  .hero__title {
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+    font-weight: 700;
+    padding-left: 1.6rem;
+    color: $bandsite-white;
+    align-self: center;
+  }
+
+  // ! .. Media Queries .. ! //
+
+  @include medium {
+    min-height: 30rem;
+    min-width: 100%;
+  }
+  .hero__title {
+    font-size: 3.6rem;
+    line-height: 4.4rem;
+  }
 }
 
 // ! .. About Section .. ! //
@@ -71,6 +91,7 @@
   }
 
   // ! .. Media Queries .. ! //
+
   @include medium {
     .about__image {
       display: flex;
@@ -136,10 +157,17 @@
 // ! Gallery Section Below ! //
 
 .photo__gallery {
+  display: flex;
+  margin: 0 auto;
+  flex-wrap: wrap;
   width: 100%;
-  background-color: $bansite-offwhite;
+  padding: 1.6rem;
+
+  background-color: $bandsite-offwhite;
 
   .gallery__title {
+    display: block;
+    width: 100%;
     padding: $mobile__heading--padding;
     font-size: 2.4rem;
     line-height: 3.2rem;
@@ -147,48 +175,280 @@
     color: $bandsite-black;
   }
   .mobile__images {
-    max-width: 100%;
+    max-width: 38rem;
+    margin: 0 auto;
+
     padding: $mobile__heading--padding;
   }
 
   // ! .. Media Queries .. ! //
+  @include small {
+    // .mobile__images {
+    // }
 
-  @include medium {
-    width: 100vw;
-    display: flex;
-    height: 60rem;
-    flex-wrap: wrap;
-    padding: 0 0 0.8rem 0;
-    justify-content: center;
-    margin: 0 auto;
+    @include medium {
+      width: 100vw;
+      display: flex;
+      flex-direction: row;
+      height: 60rem;
+      flex-wrap: wrap;
+      padding: 0 0 0.8rem 0;
+      justify-content: center;
+      margin: 0 auto;
 
-    .gallery__title {
-      width: 100%;
-      font-size: 3.6rem;
-      padding-top: 5rem;
-    }
-
-    .mobile__images {
-      max-width: 260px;
-      max-height: 150px;
-      @include img__quality;
-      padding: 0 0.8rem 0 0.8rem;
-    }
-
-    // gallery looks good at large images are accurate
-    @include large {
       .gallery__title {
-        padding-left: 12.5rem;
+        width: 100%;
+        font-size: 3.6rem;
+        padding-top: 5rem;
       }
+
       .mobile__images {
-        max-width: 275px;
+        max-width: 24rem;
+        max-height: 150px;
+        @include img__quality;
+        padding: 0 0.8rem 0 0.8rem;
+      }
+
+      // gallery looks good at large images are accurate
+      @include large {
+        .gallery__title {
+          padding-left: 12.5rem;
+        }
+        .mobile__images {
+          max-width: 275px;
+        }
       }
     }
   }
 }
-// ! Footer Section Below ! //
+
+// ! .. Comments Section .. ! //
+
+.form__wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+.create__form {
+  display: flex;
+}
+.comments__title {
+  align-self: flex-start;
+  padding-top: 2.4rem;
+  padding-bottom: 1.6rem;
+  padding: 2.4rem 0 1.6rem 1.6rem;
+  font-size: 2.4rem;
+  line-height: 3.2rem;
+  font-weight: 700;
+  color: $bandsite-black;
+}
+
+.comments__form {
+  width: 100%;
+  min-height: 25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  padding-bottom: 1.6rem;
+  padding-right: 1.6rem;
+  border-bottom: 1px solid $bandsite-mercury;
+  line-height: 2.4rem;
+}
+
+ul,
+li {
+  list-style-type: none;
+  padding: 0;
+}
+
+.comments__img {
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 50%;
+  min-height: 3.6rem;
+  min-width: 3.6rem;
+  max-height: 3.6rem;
+  max-width: 3.6rem;
+  margin-left: 2rem;
+  background-size: cover;
+  background-position: center;
+  background-image: url("../assets/Images/Mohan-muruge.jpg");
+  align-self: flex-start;
+  margin: 2rem 2rem 0 0;
+}
+
+.comments__sub-title {
+  color: $bandsite-silver;
+  display: flex;
+  align-self: flex-start;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.comment__text-area {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid $bandsite-mercury;
+  border-radius: 0.4rem;
+  background-color: $bandsite-offwhite;
+  min-width: 80vw;
+  max-height: 8rem;
+  padding: 1.2rem;
+  max-width: 70%;
+  font-size: 1.4rem;
+
+  &:active {
+    border: $bandsite-black 1px solid;
+  }
+}
+
+.comment__text-area__name {
+  display: flex;
+  border: 1px solid $bandsite-mercury;
+  border-radius: 0.4rem;
+  background-color: $bandsite-offwhite;
+  min-width: 80vw;
+  padding: 1rem;
+  max-width: 70%;
+  height: 3.6rem;
+  font-size: 1.4rem;
+  &:active {
+    border: $bandsite-black 1px solid;
+  }
+}
+.comments__default {
+  border-bottom: 1px solid $bandsite-mercury;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.comments__default__img {
+  display: flex;
+  border-radius: 50%;
+  min-height: 3.6rem;
+  min-width: 3.6rem;
+  max-height: 3.6rem;
+  max-width: 3.6rem;
+  background-size: cover;
+  background-position: center;
+  margin-top: 3rem;
+  width: fit-content;
+  background-color: $bandsite-mercury;
+}
+.comments__default__names {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: $bandsite-black;
+  align-self: flex-start;
+  padding: 2rem 0 0 1rem;
+  line-height: 2rem;
+}
+.comments__default__dates {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  align-content: center;
+  margin-left: auto;
+  color: $bandsite-mercury;
+  padding-top: 1rem;
+  padding-left: 8rem;
+}
+
+.comments__default__info {
+  padding-left: 5rem;
+  color: $bandsite-black;
+  font-size: 1.2rem;
+  padding-bottom: 2.4rem;
+  padding-top: -2rem;
+}
+.comment__btn {
+  min-width: 80vw;
+  min-height: 4rem;
+  margin-top: 1.6rem;
+  background-color: $bandsite-black;
+  color: $bandsite-white;
+  font-size: 2rem;
+  border-radius: 0.4rem;
+}
+
+#comment__imageId {
+  display: flex;
+  flex-direction: column;
+  max-width: 20%;
+  min-width: 20%;
+  flex-wrap: wrap;
+}
+
+.comments__list {
+  min-height: 25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding-bottom: 1.6rem;
+  padding-right: 1.6rem;
+  border-bottom: 1px solid $bandsite-mercury;
+  line-height: 2.4rem;
+}
+.comment__information,
+.comment__test {
+  display: flex;
+  flex-direction: column;
+  & p {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+#comment__infoId {
+  display: flex;
+  flex-direction: column;
+}
+
+#comments {
+  display: flex;
+  width: 100%;
+}
+
+// ! comment new
+.comment {
+  display: flex;
+  align-items: flex-end;
+  padding: 1.6rem;
+
+  .divImg {
+    display: flex;
+    align-self: flex-start;
+    padding-right: 1.5rem;
+    margin-top: -3rem;
+  }
+  .headerContainer {
+    display: flex;
+    justify-content: space-between;
+    line-height: 2.5rem;
+  }
+  .comments__name {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: $bandsite-black;
+  }
+  .comments__date {
+    font-size: 1.6rem;
+    display: flex;
+    color: $bandsite-silver;
+  }
+  .comments__info {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: $bandsite-black;
+    font-size: 1.2rem;
+  }
+}
+// ! .. Footer Section Below .. ! //
 
 .footer {
+  width: 100%;
   background-color: $bandsite-black;
   color: $bandsite-white;
   padding: $mobile__heading--padding;

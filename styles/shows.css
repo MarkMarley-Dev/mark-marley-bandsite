@@ -79,25 +79,22 @@
 }
 @media only screen and (min-width: 768px) {
   .nav {
+    justify-content: flex-start;
     flex-direction: row;
   }
-  .nav .nav__container {
+  .nav__container {
     justify-content: flex-start;
     padding: 3rem 4rem 0 4rem;
+    max-width: 50rem;
   }
-  .nav .nav__brand-img {
+  .nav__brand-img {
     padding-left: 2.4rem;
   }
-  .nav .nav__container-links,
-.nav .nav__container--links--active {
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
+  .nav__container-links,
+.nav .nav__container-links--active {
+    max-width: 50%;
   }
-  .nav .nav__container-links {
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
+  .nav__container-links {
     padding-left: 4rem;
   }
 }

@@ -47,22 +47,23 @@
   // ! .. Media Queries .. ! //
 
   @include medium {
+    justify-content: flex-start;
     flex-direction: row;
 
-    .nav__container {
+    &__container {
       justify-content: flex-start;
       padding: 3rem 4rem 0 4rem;
+      max-width: 50rem;
     }
-    .nav__brand-img {
+    &__brand-img {
       padding-left: 2.4rem;
     }
 
-    .nav__container-links,
-    .nav__container--links--active {
-      width: fit-content;
+    &__container-links,
+    .nav__container-links--active {
+      max-width: 50%;
     }
-    .nav__container-links {
-      width: fit-content;
+    &__container-links {
       padding-left: 4rem;
     }
   }

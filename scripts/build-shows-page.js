@@ -57,13 +57,8 @@ axios
   .then((response) => console.log(response.data))
   .catch((err) => console.log("Something went wrong: ", err));
 
-axios
-  .get(REQUEST_API("showdates"))
-  .then((response) => console.log(response.data))
-  .catch((err) => console.log("Something went wrong: ", err));
-
 let lst = [];
-const populateData = (data) => {
+const commentsData = (data) => {
   lst = data.slice();
   console.log(lst);
 };
@@ -71,15 +66,28 @@ const populateData = (data) => {
 axios
   .get(REQUEST_API("comments"))
   .then(function (response) {
-    populateData(response.data);
+    commentsData(response.data);
   })
   .catch(function (error) {
     console.log(error);
   });
 
+let showsList = [];
+const showsfunc = (data) => {
+  showsList = data.slice();
+  console.log(showsList);
+};
+
+axios
+  .get(REQUEST_API("showdates"))
+  .then(function (response) {
+    showsfunc(response.data);
+  })
+  .catch((err) => console.log("Something went wrong: ", err));
+
 // ! .. Shows List .. ! //
 
-const showsContainer = document.querySelector(".shows-container");
+const showsContainer = document.querySelector(".shows__container");
 showsContainer.classList.add("shows__container");
 
 const showTitle = document.createElement("show-title");

@@ -60,13 +60,15 @@
   margin: 0;
   padding: 0;
 }
-.nav .nav__container-links {
+.nav .nav__container-links,
+.nav .nav__container-links-txt {
   display: flex;
   justify-content: center;
   font-size: 2rem;
   color: #afafaf;
   padding-bottom: 1.6rem;
   width: 50%;
+  text-decoration: none;
 }
 .nav .nav__container-links--active {
   display: flex;
@@ -76,6 +78,13 @@
   padding-bottom: 1.6rem;
   width: 50vw;
   border-bottom: 4px solid white;
+  list-style: none;
+  text-decoration: none;
+}
+.nav .nav__container-links--active-txt {
+  font-size: 2rem;
+  color: #ffffff;
+  text-decoration: none;
 }
 @media only screen and (min-width: 768px) {
   .nav {
@@ -240,7 +249,9 @@
   opacity: 0.5;
   max-width: 100%;
   min-height: 30rem;
-  padding: 1.6rem;
+  padding: 2.4rem;
+  padding-right: 2.4rem;
+  padding-left: 2.4rem;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -265,12 +276,13 @@
 .hero__soundcloud-container {
   display: flex;
   align-self: center;
+  margin: 0 1.6rem;
 }
 .hero__soundcloud-i-frame {
   display: flex;
   border-radius: 0.4rem;
   max-height: 12rem;
-  min-width: 37.5rem;
+  min-width: 36rem;
   border: 1.6rem;
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -312,13 +324,14 @@
   display: flex;
   flex-direction: column;
   border-bottom: 1px solid #e1e1e1;
-  line-height: 2rem;
+  line-height: 2.4rem;
 }
 .shows__title {
   color: #323232;
   font-size: 2.4rem;
+  font-weight: 600;
   border-top: 1.6rem;
-  padding: 0 0 1.6rem 1.6rem;
+  padding: 0 0 2.4rem 1.6rem;
 }
 .shows__date-actual {
   color: #323232;
@@ -352,7 +365,11 @@
   background-color: #323232;
   color: #ffffff;
   font-size: 2rem;
+  font-weight: 500;
   border-radius: 0.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 @media only screen and (min-width: 768px) {
   .shows__div {

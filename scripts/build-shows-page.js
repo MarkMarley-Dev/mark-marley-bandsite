@@ -52,7 +52,7 @@ showTitleContainer.appendChild(showTitle);
 
 function createShowContainer() {
   const showDiv = document.createElement("ul");
-  showDiv.classList.add("shows__div");
+  showDiv.classList.add("show__div-ul");
   const showContainer = document.querySelector(".shows__container");
   showContainer.appendChild(showDiv);
 }

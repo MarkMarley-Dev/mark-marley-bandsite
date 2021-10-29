@@ -104,14 +104,14 @@
     border-top: 1.6rem;
     padding: 0 0 1.6rem 1.6rem;
   }
-  &__date-container {
-    color: $bandsite-silver;
-    font-size: 1.3rem;
-  }
   &__date-actual {
     color: $bandsite-black;
     font-size: 1.4rem;
     font-weight: 550;
+  }
+  &__sub-title {
+    color: $bandsite-silver;
+    font-size: 1.3rem;
   }
   &__venue-container {
     color: $bandsite-silver;
@@ -130,7 +130,7 @@
     font-size: 1.4rem;
   }
 
-  &__buy__tickets-btn {
+  &__buy-tickets-btn {
     max-width: 40rem;
     min-height: 4rem;
     margin-top: 1.6rem;

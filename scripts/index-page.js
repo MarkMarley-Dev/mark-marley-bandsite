@@ -97,3 +97,41 @@ formEl.addEventListener("submit", (e) => {
 
   e.target.reset();
 });
+
+const BASE_API = "https://project-1-api.herokuapp.com/";
+const REGISTER_API = "https://project-1-api.herokuapp.com/register";
+const PERSONAL_API_KEY = "48c86835-2e4a-4a12-950d-b7f00dfde05d";
+const REQUEST_API = (request) =>
+  ` https://project-1-api.herokuapp.com/${request}?api_key=48c86835-2e4a-4a12-950d-b7f00dfde05d`;
+
+// ? .. REGISTER REQUEST FOR API KEY.. ? //
+
+axios
+  .get(REGISTER_API)
+  .then((response) => console.log(response.data))
+  .catch((err) => console.log("Something went wrong: ", err));
+
+// ? .. GET COMMENTS .. ? //
+axios
+  .get(REQUEST_API("comments"))
+  .then((response) => {
+    const commentData = response.data;
+    console.log(commentData);
+  })
+  .catch((err) => console.log("Something went wrong: ", err));
+
+let commentlist = [];
+const commentsData = (data) => {
+  commentlist = data.slice();
+
+  console.log(commentlist);
+};
+
+axios
+  .get(REQUEST_API("comments"))
+  .then(function (response) {
+    commentsData(response.data);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });

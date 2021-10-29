@@ -1,40 +1,67 @@
-const data = [
-  {
-    date: "Mon Sept 06 2021",
-    venue: "Ronald Lane ",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Tue Sept 21 2021",
-    venue: "Pier 3 East",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Fri Oct 15 2021",
-    venue: "View Lounge",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Sat Nov 06 2021",
-    venue: "Hyatt Agency",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Fri Nov 26 2021",
-    venue: "Moscow Center",
-    location: "San Francisco, CA",
-  },
+// const data = [
+//   {
+//     date: "Mon Sept 06 2021",
+//     venue: "Ronald Lane ",
+//     location: "San Francisco, CA",
+//   },
+//   {
+//     date: "Tue Sept 21 2021",
+//     venue: "Pier 3 East",
+//     location: "San Francisco, CA",
+//   },
+//   {
+//     date: "Fri Oct 15 2021",
+//     venue: "View Lounge",
+//     location: "San Francisco, CA",
+//   },
+//   {
+//     date: "Sat Nov 06 2021",
+//     venue: "Hyatt Agency",
+//     location: "San Francisco, CA",
+//   },
+//   {
+//     date: "Fri Nov 26 2021",
+//     venue: "Moscow Center",
+//     location: "San Francisco, CA",
+//   },
 
-  {
-    date: "Wed Dec 15 2021",
-    venue: "Press Club",
-    location: "San Francisco, CA",
-  },
-];
+//   {
+//     date: "Wed Dec 15 2021",
+//     venue: "Press Club",
+//     location: "San Francisco, CA",
+//   },
+// ];
 
-let shows = data;
+// // let shows = data;
 
-shows.map((shows) => shows.value);
+// // shows.map((shows) => shows.value);
+
+// ! .. Shows List .. ! //
+
+const showsContainer = document.querySelector(".shows__container");
+showsContainer.classList.add("shows__container");
+
+const showTitle = document.createElement("show__title");
+showTitle.classList.add("shows__title");
+showTitle.innerText = "Shows";
+
+const showTitleContainer = document.createElement("show__title-container");
+showTitleContainer.classList.add("shows__title-container");
+showsContainer.appendChild(showTitleContainer);
+showTitleContainer.appendChild(showTitle);
+
+function createShowContainer() {
+  const showDiv = document.createElement("ul");
+  showDiv.classList.add("shows__div");
+  const showContainer = document.querySelector(".shows__container");
+  showContainer.appendChild(showDiv);
+}
+createShowContainer();
+// function displayShows(shows) {
+//   shows.forEach((show) => createShow(show));
+// }
+
+// // // displayShows(shows);
 
 // ! .. Api Data .. ! //
 
@@ -44,117 +71,121 @@ const PERSONAL_API_KEY = "48c86835-2e4a-4a12-950d-b7f00dfde05d";
 const REQUEST_API = (request) =>
   ` https://project-1-api.herokuapp.com/${request}?api_key=48c86835-2e4a-4a12-950d-b7f00dfde05d`;
 
-// ? .. REGISTER REQUEST FOR API KEY.. ? //
+// const postShows = (show) => {
+//   const showVenuQ = document.querySelector(".shows__div");
+//   let shows = document.createElement("li");
+//   shows.innerText = `${show.date} ${show.place} ${show.location} ${``} `;
 
-axios
-  .get(REGISTER_API)
-  .then((response) => console.log(response.data))
-  .catch((err) => console.log("Something went wrong: ", err));
+//   showVenuQ.appendChild(shows);
+// };
 
-// ? .. GET COMMENTS .. ? //
-axios
-  .get(REQUEST_API("comments"))
-  .then((response) => console.log(response.data))
-  .catch((err) => console.log("Something went wrong: ", err));
+// const generateShow = (show, postDate, place, location) => {};
+// const showBox = document.createElement("div");
+// showBox.classList.add(".shows__div");
+// const showContainer = document.querySelector(".shows__container");
+// showContainer.appendChild(showBox);
+// const titleDate = document.createElement("h4");
+// titleDate.classList.add("shows__sub-title");
+// titleDate.innerText = "DATES";
+// showBox.appendChild(titleDate);
+// let intDate = parseInt(postDate);
+// let myDate = new Date(intDate);
+// const showDate = document.createElement("p");
+// showDate.classList.add("show__date");
+// showDate.innerHTML = `${
+//   myDate.getMonth() + 1
+// }/${myDate.getDate()}/${myDate.getFullYear()}`;
+// showBox.appendChild(showDate);
+// const titleVenue = document.createElement("h4");
+// titleVenue.classList.add("shows__sub-title");
+// titleVenue.innerText = "VENUE";
+// showBox.appendChild(titleVenue);
+// const showVenue = document.createElement("p");
+// showVenue.classList.add("show__venue");
+// showVenue.innerText = place;
+// showBox.appendChild(showVenue);
+// const titleLocation = document.createElement("h4");
+// titleLocation.classList.add("shows__sub-title");
+// titleLocation.innerText = "LOCATION";
+// showBox.appendChild(titleLocation);
+// const showLocation = document.createElement("p");
+// showLocation.classList.add("show__location");
+// showLocation.innerText = location;
+// showBox.appendChild(showLocation);
+// };
 
-let lst = [];
-const commentsData = (data) => {
-  lst = data.slice();
-  console.log(lst);
+const getShowsData = () => {
+  return axios
+    .get(REQUEST_API("showdates"))
+    .then((res) => {
+      let shows = res.data;
+      console.log(shows);
+      shows.forEach((show) => postShows(show));
+    })
+    .catch((err) => console.log("You have a error", err));
 };
 
-axios
-  .get(REQUEST_API("comments"))
-  .then(function (response) {
-    commentsData(response.data);
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
+// / const postShows = (show) => {
+//   const showVenuQ = document.querySelector(".shows__div");
+//   let shows = document.createElement("li");
+//   shows.innerText = `${show.date} ${show.place} ${show.location} ${``} `;
 
-let showsList = [];
-const showsfunc = (data) => {
-  showsList = data.slice();
-  console.log(showsList);
+//   showVenuQ.appendChild(shows);
+// };
+getShowsData();
+const postShows = (show) => {
+  const showBox = document.createElement("div");
+  showBox.classList.add("shows__div");
+  const showContainer = document.querySelector(".shows__container");
+
+  showContainer.appendChild(showBox);
+
+  const titleDate = document.createElement("h4");
+  titleDate.classList.add("shows__sub-title");
+  titleDate.innerText = "DATES";
+  showBox.appendChild(titleDate);
+
+  let intDate = parseInt(show.date);
+  let myDate = new Date(intDate);
+  const showDate = document.createElement("p");
+  showDate.classList.add("shows__date-actual");
+  showDate.innerHTML = `${
+    myDate.getMonth() + 1
+  }/${myDate.getDate()}/${myDate.getFullYear()}`;
+  showBox.appendChild(showDate);
+
+  const titleVenue = document.createElement("h4");
+  titleVenue.classList.add("shows__sub-title");
+  titleVenue.innerText = "VENUE";
+  showBox.appendChild(titleVenue);
+
+  const showVenue = document.createElement("p");
+  showVenue.classList.add("shows__venue-actual");
+  showVenue.innerText = show.place;
+  showBox.appendChild(showVenue);
+
+  const titleLocation = document.createElement("h4");
+  titleLocation.classList.add("shows__sub-title");
+  titleLocation.innerText = "LOCATION";
+  showBox.appendChild(titleLocation);
+
+  const showLocation = document.createElement("p");
+  showLocation.classList.add("shows__location-actual");
+  showLocation.innerText = show.location;
+  showBox.appendChild(showLocation);
+
+  const createBtn = document.createElement("p");
+  createBtn.classList.add("shows__buy-tickets-btn");
+  createBtn.innerText = "Buy Tickets";
+  showBox.appendChild(createBtn);
 };
+// create function called displayTable(table)
+// creates a instance of each table
+//
 
-axios
-  .get(REQUEST_API("showdates"))
-  .then(function (response) {
-    showsfunc(response.data);
-  })
-  .catch((err) => console.log("Something went wrong: ", err));
+// console.log(showDate);
+// const showDateContainer = document.createElement("show__date");
+// showDateContainer.classList.add("shows__date-actual");
+// showDateContainer.innerText = showDate;
 
-// ! .. Shows List .. ! //
-
-const showsContainer = document.querySelector(".shows__container");
-showsContainer.classList.add("shows__container");
-
-const showTitle = document.createElement("show-title");
-showTitle.classList.add("shows-title");
-showTitle.innerText = "Shows";
-
-const showTitleContainer = document.createElement("show__title-container");
-showTitleContainer.classList.add("shows__title-container");
-showsContainer.appendChild(showTitleContainer);
-showTitleContainer.appendChild(showTitle);
-
-const showTableHeader = document.createElement("show__table-headers");
-showTableHeader.classList.add("show__table-headers");
-showTableHeader.innerHTML = "SHOW VENUE LOCATION";
-
-document.querySelector(".shows__div");
-const mqTablet = window.matchMedia("(min-width: 768px)");
-{
-  showsContainer.appendChild(showTableHeader);
-}
-
-function createShow(show) {
-  if (showsContainer) {
-    const showDiv = document.createElement("show__div");
-    showDiv.classList.add("shows__div");
-
-    const dateContainer = document.createElement("date-container");
-    dateContainer.innerText = "Date";
-    dateContainer.classList.add("shows__date-container");
-
-    const showDateContainer = document.createElement("show__date");
-    showDateContainer.classList.add("shows__date-actual");
-    showDateContainer.innerText = show.date;
-
-    const venueContainer = document.createElement("venue__container");
-    venueContainer.classList.add("shows__venue-container");
-    venueContainer.innerText = "Venue";
-
-    const showVenueContainer = document.createElement("show__venue");
-    showVenueContainer.classList.add("shows__venue-actual");
-    showVenueContainer.innerText = show.venue;
-
-    const locationContainer = document.createElement("location__container");
-    locationContainer.classList.add("shows__location-container");
-    locationContainer.innerText = "Location";
-
-    const showLocationContainer = document.createElement("show__container");
-    showLocationContainer.classList.add("shows__location-actual");
-    showLocationContainer.innerText = show.location;
-
-    const buyTicketsBtn = document.createElement("button");
-    buyTicketsBtn.classList.add("shows__buy__tickets-btn");
-    buyTicketsBtn.innerText = "Buy Tickets";
-
-    showsContainer.appendChild(showDiv);
-    showDiv.appendChild(dateContainer);
-    showDiv.appendChild(showDateContainer);
-    showDiv.appendChild(venueContainer);
-    showDiv.appendChild(showVenueContainer);
-    showDiv.appendChild(locationContainer);
-    showDiv.appendChild(showLocationContainer);
-    showDiv.appendChild(buyTicketsBtn);
-  }
-}
-
-function displayShows(shows) {
-  shows.forEach((show) => createShow(show));
-}
-
-displayShows(shows);
+// console.log(showVenue);

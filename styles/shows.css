@@ -320,14 +320,14 @@
   border-top: 1.6rem;
   padding: 0 0 1.6rem 1.6rem;
 }
-.shows__date-container {
-  color: #afafaf;
-  font-size: 1.3rem;
-}
 .shows__date-actual {
   color: #323232;
   font-size: 1.4rem;
   font-weight: 550;
+}
+.shows__sub-title {
+  color: #afafaf;
+  font-size: 1.3rem;
 }
 .shows__venue-container {
   color: #afafaf;
@@ -345,7 +345,7 @@
   color: #323232;
   font-size: 1.4rem;
 }
-.shows__buy__tickets-btn {
+.shows__buy-tickets-btn {
   max-width: 40rem;
   min-height: 4rem;
   margin-top: 1.6rem;

@@ -80,6 +80,9 @@
     }
   }
   @include large {
+    &__brand-img {
+      padding-left: 12rem;
+    }
   }
 }
 

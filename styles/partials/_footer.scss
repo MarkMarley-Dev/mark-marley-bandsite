@@ -14,7 +14,7 @@
   font-size: 1.3rem;
   line-height: 1.8rem;
   font-weight: 400;
-  margin: 0 1.6rem;
+  // margin: 0 1.6rem;
 
   &__icon {
     padding-right: 2rem;
@@ -125,6 +125,8 @@
     }
   }
   @include large {
+    width: 100%;
+
     &__contact-section {
       justify-content: flex-start;
       height: 20rem;

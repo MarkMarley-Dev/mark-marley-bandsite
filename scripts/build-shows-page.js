@@ -18,20 +18,24 @@ const showSubtitleContainer = document.createElement(
 showSubtitleContainer.classList.add("shows__sub-title-container");
 showsContainer.appendChild(showSubtitleContainer);
 
-const titleDate = document.createElement("h4");
+const titleDate = document.createElement("p");
 titleDate.classList.add("shows__sub-title-tabplus");
 titleDate.innerText = "DATES";
 showSubtitleContainer.appendChild(titleDate);
 
-const titleVenue = document.createElement("h4");
-titleVenue.classList.add("shows__sub-title-tabplus");
+const titleVenue = document.createElement("p");
+titleVenue.classList.add("shows__tabplus-venue");
 titleVenue.innerText = "VENUE";
 showSubtitleContainer.appendChild(titleVenue);
 
-const titleLocationPlus = document.createElement("h4");
-titleLocationPlus.classList.add("shows__sub-title-tabplus");
+const titleLocationPlus = document.createElement("p");
+titleLocationPlus.classList.add("shows__tabplus-location");
 titleLocationPlus.innerText = "LOCATION";
 showSubtitleContainer.appendChild(titleLocationPlus);
+
+const btnBox = document.createElement("p");
+btnBox.classList.add("shows__tabplus-btn");
+showSubtitleContainer.appendChild(btnBox);
 
 function createShowContainer() {
   const showDiv = document.createElement("ul");

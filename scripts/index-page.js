@@ -34,14 +34,14 @@ getCommentsData();
 //     .catch((err) => console.log("You have a error", err));
 // };
 
-const commentsData = () => {
+const getComments = () => {
   return axios
     .get(REQUEST_API("comments"))
     .then((res) => {
-      let comments = res.data;
-      console.log(comments);
-
-      comments.forEach((comment) => createComment(comment));
+      const sortedComments = res.data.sort((a, b) => {
+        return b.timestamp - a.timestamp;
+      });
+      sortedComments.forEach((comment) => createComment(comment));
     })
     .catch((err) => console.log("You have a error", err));
 };
@@ -90,7 +90,7 @@ const createComment = (comment) => {
     commentInfoContainer.appendChild(commentInfo);
   }
 };
-commentsData();
+getComments();
 
 function displayFormComments(comment) {
   comment.forEach((comment) => {
@@ -165,13 +165,13 @@ function displayFormComments(comment) {
 //   createComment(commentForm);
 // });
 
-const cleardata = () => {
-  commentsSection.innerHTML = "";
+// const cleardata = () => {
+//   commentsSection.innerHTML = "";
 
-  createComment(comments);
+//   createComment(comments);
 
-  e.target.reset();
-};
+//   event.target.reset();
+// };
 
 // const clearForm = () => {
 //   document.getElementById("form").slice();
@@ -180,58 +180,55 @@ const form = document.querySelector(".create__form");
 const formEvent = form.addEventListener("submit", (event) => {
   console.log("you pushed the submit button");
   event.preventDefault();
-  const commentNameForm = event.target.commentsName.value;
+  const commentNameForm = event.target.commentName.value;
   const commentInfoForm = event.target.commentsInfo.value;
+  // const commentTimestampForm = event.target.commentstimestamp.value;
   console.log("form name text", commentNameForm);
-  const commentForm = { commentNameForm, commentInfoForm };
+  commentsSection.innerHTML = "";
 
-  const createCommentForm = () => {
-    return axios
-      .post(
-        "https://project-1-api.herokuapp.com/comments?api_key=48c86835-2e4a-4a12-950d-b7f00dfde05d",
-        {
-          name: commentNameForm,
-          comment: commentInfoForm,
-        }
-      )
-      .then((response) => {
-        const commentResponse = response.data;
-        console.log(commentResponse);
-        const timestamp = commentResponse.timestamp;
+  postComment(commentNameForm, commentInfoForm).then(() => getComments());
 
-        console.log(timestamp);
-      });
-
-    // form();
-  };
-
-  (error) => {
-    console.log(error);
-  };
-  createCommentForm();
+  event.target.reset();
 });
-// displayFormComments();
+const postComment = (commentNameForm, commentInfoForm) => {
+  return axios
+    .post(
+      "https://project-1-api.herokuapp.com/comments?api_key=48c86835-2e4a-4a12-950d-b7f00dfde05d",
 
-// const commentNameForm = document.querySelector(
-//   ".comment__text-area-name"
-// ).value;
-// const commentInfoForm = document.querySelector(".comment__text-area").value;
+      {
+        name: commentNameForm,
+        comment: commentInfoForm,
+      }
+    )
+    .then((response) => {
+      console.log(response);
+      // const data = response.data;
+      // data.sort((a, b) => (a.timestamp < b.timestamp ? 1 : -1)).then;
+      // newComments.forEach((comment) => {
+      //   createComment(comment.name, comment.comment, comment.timestamp);
+    })
+    .catch((err) => {
+      console.log("You have a error", err);
+    });
+};
 
-// const commentNameFormRequest = document.querySelector("commentName");
-// const commentInfoFormRequest = document.querySelector("commentInfo");
-// const DeleteItem = () => {
-//   return axios
-//     .delete(
-//       `https://project-1-api.herokuapp.com/comments/5:?api_key=48c86835-2e4a-4a12-950d-b7f00dfde05d`
-//     )
-//     .then(
-//       (response) => {
-//         console.log(response);
-//       },
+// cleardata();
 
-//       (error) => {
-//         console.log(error);
-//       }
-//     );
-// };
-// DeleteItem();
+//         const newComments = response.data
+//           .sort(function (a, b) {
+//             return b.timestamp - a.timestamp;
+//           })
+//           .then((response) => {
+//             newComments.forEach((comment) => {
+//               generateCommentl(
+//                 comment.name,
+//                 comment.comment,
+//                 comment.timestamp
+//               );
+//             });
+//           });
+//         createCommentForm();
+//       });
+//     // createCommentForm();
+//   };
+// });

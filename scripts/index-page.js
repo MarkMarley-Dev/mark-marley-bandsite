@@ -40,6 +40,7 @@ const commentsData = () => {
     .then((res) => {
       let comments = res.data;
       console.log(comments);
+
       comments.forEach((comment) => createComment(comment));
     })
     .catch((err) => console.log("You have a error", err));
@@ -50,7 +51,7 @@ const commentsSection = document.querySelector(".comments__section");
 const createComment = (comment) => {
   if (commentsSection) {
     const div = document.createElement("div");
-    div.classList.add("comment");
+    div.classList.add("comments");
 
     const divImg = document.createElement("div");
     divImg.classList.add("divImg");
@@ -59,7 +60,7 @@ const createComment = (comment) => {
     headerContainer.classList.add("headerContainer");
 
     const commentInfoContainer = document.createElement("div");
-    commentInfoContainer.classList.add("commentInfoContainer");
+    commentInfoContainer.classList.add("commentsInfoContainer");
 
     const commentImage = document.createElement("img");
     commentImage.classList.add("comments__default-img");
@@ -75,7 +76,6 @@ const createComment = (comment) => {
     commentDate.innerHTML = `${
       myDate.getMonth() + 1
     }/${myDate.getDate()}/${myDate.getFullYear()}`;
-
     const commentInfo = document.createElement("p");
     commentInfo.innerText = comment.comment;
     commentInfo.classList.add("comments__info");
@@ -97,6 +97,7 @@ function displayFormComments(comment) {
     const commentName = document.createElement("h2");
     commentName.innerText = comment.name;
     commentName.classList.add("comments__name");
+    comment.timestamp.sort((a, b) => (a.timestamp > b.timestamp ? 1 : -1));
   });
 }
 // displayComments(comments);
@@ -164,17 +165,25 @@ function displayFormComments(comment) {
 //   createComment(commentForm);
 // });
 
+const cleardata = () => {
+  commentsSection.innerHTML = "";
+
+  createComment(comments);
+
+  e.target.reset();
+};
+
+// const clearForm = () => {
+//   document.getElementById("form").slice();
+// };
 const form = document.querySelector(".create__form");
 const formEvent = form.addEventListener("submit", (event) => {
   console.log("you pushed the submit button");
   event.preventDefault();
-  const commentNameForm = event.target.commentName.value;
-  const commentInfoForm = event.target.commentInfo.value;
+  const commentNameForm = event.target.commentsName.value;
+  const commentInfoForm = event.target.commentsInfo.value;
+  console.log("form name text", commentNameForm);
   const commentForm = { commentNameForm, commentInfoForm };
-
-  // const clearForm = () => {
-  //   document.getElementById("form").slice();
-  // };
 
   const createCommentForm = () => {
     return axios
@@ -185,28 +194,23 @@ const formEvent = form.addEventListener("submit", (event) => {
           comment: commentInfoForm,
         }
       )
-      .then(
-        (response) => {
-          console.log(response);
-          const cleardata = () => {
-            comments.unshift(commentForm);
+      .then((response) => {
+        const commentResponse = response.data;
+        console.log(commentResponse);
+        const timestamp = commentResponse.timestamp;
 
-            commentsSection.innerHTML = "";
+        console.log(timestamp);
+      });
 
-            createComment(comments);
+    // form();
+  };
 
-            e.target.reset();
-          };
-          cleardata();
-        },
-
-        (error) => {
-          console.log(error);
-        }
-      );
+  (error) => {
+    console.log(error);
   };
   createCommentForm();
 });
+// displayFormComments();
 
 // const commentNameForm = document.querySelector(
 //   ".comment__text-area-name"

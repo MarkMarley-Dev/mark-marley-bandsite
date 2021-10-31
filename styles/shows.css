@@ -371,17 +371,24 @@
   justify-content: center;
   align-items: center;
 }
+.shows__sub-title-tabplus {
+  display: none;
+}
 @media only screen and (min-width: 768px) {
-  .shows__div {
+  .shows__div, .shows__sub-title-container {
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
   }
-  .shows__date-container, .shows__venue-container, .shows__location-container {
+  .shows__sub-title, .shows__venue-container, .shows__location-container {
     display: none;
   }
   .shows .show__table-headers {
     color: #afafaf;
     font-size: 5rem;
+  }
+  .shows__sub-title-tabplus {
+    display: flex;
   }
 }
 

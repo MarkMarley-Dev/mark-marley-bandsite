@@ -455,7 +455,6 @@
 
 .comments {
   display: flex;
-  // justify-content: center;
   align-items: center;
   padding-bottom: 1.6rem;
   padding-right: 1.6rem;
@@ -463,11 +462,7 @@
   border-bottom: 1px solid $bandsite-mercury;
   line-height: 2.4rem;
 }
-.headerContainer {
-  display: flex;
-  justify-content: space-between;
-  line-height: 2.5rem;
-}
+
 .comments__btn {
   display: flex;
   justify-content: center;
@@ -485,6 +480,12 @@
       max-width: 25vw;
     }
   }
+}
+div.headerContainer {
+  display: flex;
+  min-width: 75vw;
+  justify-content: space-between;
+  line-height: 2.5rem;
 }
 // ! .. Footer Section Below .. ! //
 

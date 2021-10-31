@@ -271,8 +271,8 @@
   color: #ffffff;
   align-self: flex-start;
 }
-.hero__title__sub-title {
-  font-size: 2.4rem;
+.hero__title-sub-title {
+  font-size: 2.2rem;
   line-height: 3.2rem;
   font-weight: 400;
   padding-left: 1.6rem;
@@ -306,7 +306,7 @@
     line-height: 6rem;
     letter-spacing: 0.2rem;
   }
-  .hero__title__sub-title {
+  .hero__title-sub-title {
     font-size: 3.2rem;
     padding-top: 2rem;
   }
@@ -315,6 +315,20 @@
     align-self: flex-start;
     padding-top: 2rem;
     justify-content: flex-start;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .hero {
+    min-height: 60rem;
+    justify-content: center;
+  }
+  .hero__title-sub-title {
+    padding-bottom: 2rem;
+    font-weight: 600;
+  }
+  .hero__item-container {
+    display: flex;
+    flex-direction: row;
   }
 }
 
@@ -358,7 +372,7 @@
 }
 .shows__location-container {
   color: #afafaf;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
 }
 .shows__location-actual {
   color: #323232;
@@ -394,9 +408,14 @@
     justify-content: space-between;
     padding-top: 0;
   }
+  .shows__title {
+    font-size: 3rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
   .shows__sub-title-container {
     padding-top: 4rem;
-    padding: 2.4rem 1.6rem 1.6rem;
+    padding: 2.4rem 1.6rem 0 1.6rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -410,9 +429,15 @@
   }
   .shows__sub-title-tabplus, .shows__tabplus-venue, .shows__tabplus-location {
     display: flex;
+    font-size: 1.2rem;
+    color: #afafaf;
+    padding-bottom: -3rem;
   }
-  .shows__shows__tabplus-venue, .shows__tabplus-location {
+  .shows__tabplus-location {
     padding-right: 3rem;
+  }
+  .shows__tabplus-venue {
+    padding-right: 2rem;
   }
   .shows__tabplus-btn {
     min-width: 10rem;
@@ -423,6 +448,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .shows__sub-title-tabplus, .shows__tabplus-venue, .shows__tabplus-location {
+    font-size: 1.3rem;
+    font-weight: 500;
+  }
+  .shows__date-actual, .shows__venue-actual, .shows__location-actual {
+    font-size: 1.6rem;
   }
 }
 

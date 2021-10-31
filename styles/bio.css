@@ -699,12 +699,6 @@
   line-height: 2.4rem;
 }
 
-.headerContainer {
-  display: flex;
-  justify-content: space-between;
-  line-height: 2.5rem;
-}
-
 .comments__btn {
   display: flex;
   justify-content: center;
@@ -721,6 +715,13 @@
   .comments__btn .comments__btn {
     max-width: 25vw;
   }
+}
+
+div.headerContainer {
+  display: flex;
+  min-width: 75vw;
+  justify-content: space-between;
+  line-height: 2.5rem;
 }
 
 .footer {

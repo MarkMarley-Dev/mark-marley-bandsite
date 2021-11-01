@@ -1,10 +1,99 @@
 @use "./partials/breakpoints" as *;
 @use "./partials/mixins" as *;
 @use "./partials/typography" as *;
-@use "./partials/header" as *;
 @use "./partials/footer" as *;
 @use "./partials/resets" as *;
 @use "./partials/variables" as *;
+
+// ! .. Shows NAV .. ! //
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  background-color: $bandsite-black;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  width: 100%;
+  height: 9rem;
+
+  &__brand-img {
+    min-width: 12rem;
+    min-height: 2rem;
+    padding-bottom: 0.3rem;
+    // padding-top: 1.6rem;
+  }
+
+  &__container {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    width: 100vw;
+    margin: 0;
+    padding: 1.6rem;
+  }
+  .nav__container-links,
+  .nav__container-links-txt {
+    display: flex;
+    justify-content: center;
+    font-size: 1.7rem;
+    color: $bandsite-silver;
+    padding-bottom: 1.6rem;
+    width: 50%;
+    text-decoration: none;
+  }
+  .nav__container-links--active {
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    color: $bandsite-white;
+    padding-bottom: 1.6rem;
+    width: 50vw;
+    border-bottom: 4px solid white;
+    list-style: none;
+    text-decoration: none;
+  }
+  .nav__container-links--active-txt {
+    font-size: 2rem;
+    color: $bandsite-white;
+    text-decoration: none;
+  }
+  // ! .. Media Queries .. ! //
+
+  @include medium {
+    justify-content: flex-start;
+    flex-direction: row;
+
+    &__container {
+      justify-content: flex-start;
+      padding: 3rem 4rem 0 0;
+      max-width: 30rem;
+    }
+    &__brand-img {
+      padding-left: 2.4rem;
+    }
+
+    &__container-links,
+    .nav__container-links--active {
+      max-width: 50%;
+    }
+    // &__container-links {
+    //   padding-left: 4rem;
+    // }
+  }
+  @include large {
+    &__brand-img {
+      padding-left: 12rem;
+    }
+  }
+}
+
+.headers__mobile {
+  padding: $mobile__heading--padding;
+  font-size: 2.4rem;
+  line-height: 3.2rem;
+  font-weight: 700;
+}
 
 // ! .. Hero .. ! //
 
@@ -17,7 +106,9 @@
   opacity: 0.5;
   max-width: 100%;
   min-height: 30rem;
-  padding: 1.6rem;
+  padding: 2.4rem;
+  padding-right: 2.4rem;
+  padding-left: 2.4rem;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -31,28 +122,26 @@
     color: $bandsite-white;
     align-self: flex-start;
   }
-  &__title__sub-title {
-    font-size: 2.4rem;
+  &__title-sub-title {
+    font-size: 2.2rem;
     line-height: 3.2rem;
     font-weight: 400;
     padding-left: 1.6rem;
     color: $bandsite-white;
     align-self: flex-start;
   }
-  &__soundcloud__container {
+  &__soundcloud-container {
     display: flex;
     align-self: center;
+    margin: 0 1.6rem;
   }
-  &__soundcloud__i-frame {
+  &__soundcloud-i-frame {
     display: flex;
     border-radius: 0.4rem;
     max-height: 12rem;
-    min-width: 37.5rem;
+    min-width: 36rem;
     border: 1.6rem;
-
     height: fit-content;
-
-    // width: ;
   }
 
   // ! .. Media Queries .. ! //
@@ -68,15 +157,30 @@
       line-height: 6rem;
       letter-spacing: 0.2rem;
     }
-    &__title__sub-title {
+    &__title-sub-title {
       font-size: 3.2rem;
       padding-top: 2rem;
     }
-    &__soundcloud__container {
+    &__soundcloud-container {
       display: flex;
       align-self: flex-start;
       padding-top: 2rem;
       justify-content: flex-start;
+      max-width: 90vw;
+    }
+  }
+  @include large {
+    min-height: 60rem;
+    justify-content: center;
+
+    &__title-sub-title {
+      padding-bottom: 2rem;
+      font-weight: 600;
+    }
+
+    &__item-container {
+      display: flex;
+      flex-direction: row;
     }
   }
 }
@@ -96,65 +200,145 @@
     display: flex;
     flex-direction: column;
     border-bottom: 1px solid $bandsite-mercury;
-    line-height: 2rem;
+    line-height: 2.4rem;
   }
   &__title {
     color: $bandsite-black;
     font-size: 2.4rem;
+    font-weight: 600;
     border-top: 1.6rem;
-    padding: 0 0 1.6rem 1.6rem;
+    padding: 0 0 2.4rem 1.6rem;
   }
-  &__date__container {
-    color: $bandsite-silver;
-    font-size: 1.3rem;
-  }
-  &__date__actual {
+  &__date-actual {
     color: $bandsite-black;
     font-size: 1.4rem;
     font-weight: 550;
   }
-  &__venue__container {
+  &__sub-title {
     color: $bandsite-silver;
     font-size: 1.3rem;
   }
-  &__venue__actual {
+  &__venue-container {
+    color: $bandsite-silver;
+    font-size: 1.3rem;
+  }
+  &__venue-actual {
     color: $bandsite-black;
     font-size: 1.4rem;
   }
-  &__location__container {
+  &__location-container {
     color: $bandsite-silver;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
   }
-  &__location__actual {
+  &__location-actual {
     color: $bandsite-black;
     font-size: 1.4rem;
   }
 
-  &__buy__tickets__btn {
-    max-width: 40rem;
+  &__buy-tickets-btn {
+    min-width: 35rem;
+    max-width: 35rem;
     min-height: 4rem;
     margin-top: 1.6rem;
     background-color: $bandsite-black;
     color: $bandsite-white;
     font-size: 2rem;
+    font-weight: 500;
     border-radius: 0.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__sub-title-tabplus,
+  &__tabplus-btn,
+  &__tabplus-venue,
+  &__tabplus-location {
+    display: none;
+  }
+  &__sub-title-container {
+    padding: 1.6;
+    border-top: 1.6rem;
+    display: none;
+    flex-direction: column;
+    line-height: 2.4rem;
   }
 
   // ! .. Media Queries .. ! //
 
   @include medium {
     &__div {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding-top: 0;
+    }
+
+    &__title {
+      font-size: 3rem;
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+    &__sub-title-container {
+      padding-top: 4rem;
+      padding: 2.4rem 1.6rem 0 1.6rem;
+      display: flex;
       flex-direction: row;
       justify-content: space-between;
     }
-    &__date__container,
-    &__venue__container,
-    &__location__container {
+    &__sub-title,
+    &__venue-container,
+    &__location-container {
       display: none;
     }
-    .show__table__headers {
+    .show__table-headers {
       color: $bandsite-silver;
       font-size: 5rem;
+    }
+
+    &__sub-title-tabplus,
+    &__tabplus-venue,
+    &__tabplus-location {
+      display: flex;
+      font-size: 1.2rem;
+      color: $bandsite-silver;
+      padding-bottom: -3rem;
+    }
+
+    &__tabplus-location {
+      padding-right: 14rem;
+    }
+    &__tabplus-venue {
+      padding-right: 2rem;
+    }
+    &__tabplus-btn {
+      min-width: 10rem;
+      max-width: 40rem;
+      min-height: 4rem;
+
+      background-color: $bandsite-white;
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__buy-tickets-btn {
+      max-width: 20rem;
+      min-width: 20rem;
+    }
+  }
+
+  @include large {
+    &__sub-title-tabplus,
+    &__tabplus-venue,
+    &__tabplus-location {
+      font-size: 1.3rem;
+      font-weight: 500;
+    }
+    &__date-actual,
+    &__venue-actual,
+    &__location-actual {
+      font-size: 1.6rem;
     }
   }
 }
@@ -172,7 +356,7 @@
   .footer__icon {
     padding-right: 2rem;
   }
-  .nav__logo__tabplus {
+  .nav__logo-tabplus {
     display: none;
   }
 
@@ -218,7 +402,7 @@
     flex-wrap: wrap;
     flex-direction: row;
 
-    .social__contact__section {
+    .social__contact-section {
       display: flex;
       width: 100vw;
       justify-content: space-evenly;
@@ -231,7 +415,7 @@
       justify-content: flex-end;
       align-self: center;
     }
-    .nav__logo__tabplus {
+    .nav__logo-tabplus {
       display: flex;
       height: 2rem;
       width: 12rem;
@@ -249,9 +433,9 @@
       justify-content: flex-start;
     }
     .footer__text {
-      @include footer__tab__text;
+      @include footer__tab-text;
     }
-    .nav__brand__img {
+    .nav__brand-img {
       padding-left: 10rem;
       display: none;
     }
@@ -277,7 +461,7 @@
     }
 
     @include large {
-      .social__contact__section {
+      .social__contact-section {
         justify-content: flex-start;
         height: 20rem;
       }

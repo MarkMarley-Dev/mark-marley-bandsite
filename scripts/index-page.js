@@ -100,82 +100,12 @@ function displayFormComments(comment) {
     comment.timestamp.sort((a, b) => (a.timestamp > b.timestamp ? 1 : -1));
   });
 }
-// displayComments(comments);
+
 
 // ! .. Form Functions .. ! //
-// application / json; //
+
 // ? .. Post function .. ? //
 
-// const commentNameForm = document.querySelector(".comment__text-area-name");
-
-// const commentInfoForm = document.querySelector(".comment__text-area");
-
-// change to a post request in function
-// add const different variables to function above to include them without destroying other function
-
-// const commentNameForm = e.target.commentName.value;
-// const commentInfoForm = e.target.commentInfo.value;
-
-// const newComment = {
-//   commentNameForm,
-//   commentInfoForm,
-// };
-
-// comment.unshift(newComment);
-
-// commentsSection.innerHTML = "";
-
-// displayFormComments(comment);
-
-// e.target.reset();
-// });
-
-// addForm();
-
-// axios
-//   .post(
-//     "https://project-1-api.herokuapp.com/${request}?api_key=48c86835-2e4a-4a12-950d-b7f00dfde05d",
-//     newComment
-//   )
-//   .then((response) => console.log("Post response", response))
-//   .catch((err) => console.log("Something went wrong: ", err));
-
-// const createCommentForm = () => {
-//   return axios
-//     .post("https://project-1-api.herokuapp.com/comments?api_key=$%7BKEY_API%7D")
-//     .then((response) => {
-//       console.log(response.data);
-//       const CommentResponse = response.data;
-//       console.log("POST: user is added", CommentResponse);
-//       // append to DOM
-//       createComment(CommentResponse);
-//     })
-//     .catch((error) => console.error(error));
-// };
-// createCommentForm();
-// const form = document.querySelector(".create__form");
-// const formEvent = form.addEventListener("submit", (event) => {
-//   console.log("you pushed the submit button");
-//   event.preventDefault();
-//   const commentNameForm = event.target.commentName.value;
-//   const commentInfoForm = event.target.commentInfo.value;
-
-//   const commentForm = { commentNameForm, commentInfoForm };
-
-//   createComment(commentForm);
-// });
-
-// const cleardata = () => {
-//   commentsSection.innerHTML = "";
-
-//   createComment(comments);
-
-//   event.target.reset();
-// };
-
-// const clearForm = () => {
-//   document.getElementById("form").slice();
-// };
 const form = document.querySelector(".create__form");
 const formEvent = form.addEventListener("submit", (event) => {
   console.log("you pushed the submit button");

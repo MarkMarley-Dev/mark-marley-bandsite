@@ -106,19 +106,16 @@ const postShows = (show) => {
   showLocation.innerText = show.location;
   showBox.appendChild(showLocation);
 
-  const createBtn = document.createElement("p");
+  const createBtn = document.createElement("BUTTON");
+
   createBtn.classList.add("shows__buy-tickets-btn");
+  createBtn.id = "shows__buy-btn";
   createBtn.innerText = "Buy Tickets";
   showBox.appendChild(createBtn);
 };
 
-// create function called displayTable(table)
-// creates a instance of each table
-//
-
-// console.log(showDate);
-// const showDateContainer = document.createElement("show__date");
-// showDateContainer.classList.add("shows__date-actual");
-// showDateContainer.innerText = showDate;
-
-// console.log(showVenue);
+// const buyTicketBtn = document.querySelector(".shows__buy-tickets-btn");
+// buyTicketBtn.addEventListener("click", function () {
+//   const commentNameForm = event.target.commentName.value;
+//   const commentInfoForm = event.target.commentsInfo.value;
+// });

@@ -30,7 +30,7 @@
     justify-content: space-around;
     width: 100vw;
     margin: 0;
-    padding: 0;
+    padding: 1.6rem;
   }
   .nav__container-links,
   .nav__container-links-txt {
@@ -166,6 +166,7 @@
       align-self: flex-start;
       padding-top: 2rem;
       justify-content: flex-start;
+      max-width: 90vw;
     }
   }
   @include large {
@@ -234,9 +235,9 @@
     font-size: 1.4rem;
   }
 
-  &__buy-tickets-btn,
-  &__tabplus-btn {
-    max-width: 40rem;
+  &__buy-tickets-btn {
+    min-width: 35rem;
+    max-width: 35rem;
     min-height: 4rem;
     margin-top: 1.6rem;
     background-color: $bandsite-black;
@@ -304,7 +305,7 @@
     }
 
     &__tabplus-location {
-      padding-right: 3rem;
+      padding-right: 14rem;
     }
     &__tabplus-venue {
       padding-right: 2rem;
@@ -319,6 +320,11 @@
       display: flex;
       justify-content: center;
       align-items: center;
+    }
+
+    &__buy-tickets-btn {
+      max-width: 20rem;
+      min-width: 20rem;
     }
   }
 
